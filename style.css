@@ -1,8 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(231, 233, 222);
+}
 #thomas{
     max-width: 350px;
 }
 
-.digite{
+.usuarioLogin{
     background-color: #0c0c0c;
     padding: 10px 20px;
     border-radius: 5px;
@@ -10,4 +14,6 @@
     margin: 10px 0;
     width: 100%;
     max-width: 300px;
+
+
 }

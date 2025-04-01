@@ -12,26 +12,22 @@
         <img id="thomas" src="thomasotrem.png" alt="">
     </header>
     <main>
-        <h1 class="textos1">Usuário</h1>
-        <div class="digite"><h2>digite</h2></div>
-        <h1 class="textos1">Senha</h1>
-        <div class="digite"><h2>digite</h2></div>
+        <form action=""id="usuarioLogin">
+            <label for="usuario">Usuário:</label>
+                <input type="text"id="usuario" name="usuario" required>
+                <br>
+                <br>
+                <label for="senha">Senha:</label>
+                <input type="text"id="senha" name="senha" required>
+            
+            
+                <button type="button" onclick="validarFormulario()">Enviar</button>
+            
+            </form>
     </main>
     <footer>
         <h3>Esqueceu a senha?</h3>
     </footer>
 
-    <form action=""id="usuarioLogin">
-        <label for="usuario">Usuário:</label>
-            <input type="text"id="usuario" name="usuario" required>
-            <br>
-            <br>
-            <label for="senha">Senha:</label>
-            <input type="text"id="senha" name="senha" required>
-        
-        
-            <button type="button" onclick="validarFormulario()">Enviar</button>
-        
-        </form>
 </body>
 </html>
