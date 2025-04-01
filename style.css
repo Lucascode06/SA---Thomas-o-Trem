@@ -3,6 +3,11 @@
 }
 
 .digite{
-    border-color: black;
-    border: 40px;
+    background-color: #0c0c0c;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
 }
