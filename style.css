@@ -1,4 +1,8 @@
-.thomas{
-    max-width: 11000px;
+#thomas{
+    max-width: 350px;
+}
 
+.digite{
+    border-color: black;
+    border: 40px;
 }
