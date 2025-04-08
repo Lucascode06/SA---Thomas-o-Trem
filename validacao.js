@@ -10,12 +10,12 @@ function redirecionar() {
 
 
 function enviarDados() {
-    // 1. Pegar o valor da caixa de texto
     const textoDigitado = document.getElementById("caixaTexto").value;
+    localStorage.setItem("informacaoSalva", textoDigitado); 
+    window.location.href = "dados.html"; 
+}
 
-    // 2. Guardar a informação (pode ser no localStorage, sessionStorage ou enviar para um servidor)
-    localStorage.setItem("informacaoSalva", textoDigitado); // Salva no navegador
-
-    // 3. Redirecionar para outra página
-    window.location.href = "dados.html"; // Muda para outra página
+function enviarDadosLogin() {
+    const textoDigitado = document.getElementById("textoLogin").value;
+    localStorage.setItem("informacaoSalva", textoDigitado); 
 }
