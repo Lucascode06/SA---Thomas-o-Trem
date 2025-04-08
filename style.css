@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color:  rgb(231, 233, 222);
+    background-color:rgb(231, 233, 222);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,6 +35,7 @@ body {
     border: 10px solid rgb(7, 7, 7);
     border-radius: 30px;
     background-color: black;
+    color: white;
   }
  
   .login-container button {
