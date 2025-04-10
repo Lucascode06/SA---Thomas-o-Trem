@@ -19,3 +19,7 @@ function enviarDadosLogin() {
     const textoDigitado = document.getElementById("textoLogin").value;
     localStorage.setItem("informacaoSalva", textoDigitado); 
 }
+
+function redirecionarEnviar() {
+    window.location.href = 'dashboard.hmtl';
+}

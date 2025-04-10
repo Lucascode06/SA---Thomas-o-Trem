@@ -61,3 +61,11 @@ body {
     background-color: black;
   }
 
+
+
+  #enviar2{
+    justify-content:center;
+    background-color: aliceblue;
+    display: flex;
+    color: aliceblue;
+  }
