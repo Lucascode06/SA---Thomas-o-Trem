@@ -23,3 +23,16 @@ function enviarDadosLogin() {
 function redirecionarEnviar() {
     window.location.href = 'dashboard.hmtl';
 }
+
+function voltarPagina() {
+    window.location.href = "login.html";
+  }
+
+  function enviarDados() {
+    const email = document.getElementById('caixaTexto').value.trim();
+    if (email === '') {
+      alert('Por favor, digite seu e-mail.');
+    } else {
+      alert('Se este e-mail estiver cadastrado, enviaremos instruções de recuperação.');
+    }
+  }
