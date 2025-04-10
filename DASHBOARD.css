@@ -1,0 +1,51 @@
+#logo{
+    width: 40px;
+    height:40px;
+    }
+    
+    
+    body {
+        background-color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    
+    .profile-info {
+        margin-top: 20px;
+    }
+    
+    .schedule {
+        margin-top: 20px;
+        background-color:#2980b9    ;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .schedule h2 {
+        text-align: center;
+        color: white;
+    }
+    
+    .schedule-button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px 0;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .schedule-button.red {
+        background-color: #dc3545;
+    }
+    
+    .schedule-button.blue {
+        background-color: #007bff;
+    }
