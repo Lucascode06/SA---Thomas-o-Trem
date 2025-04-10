@@ -25,7 +25,7 @@ function redirecionarEnviar() {
 }
 
 function voltarPagina() {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 
   function enviarDados() {
@@ -36,7 +36,3 @@ function voltarPagina() {
       alert('Se este e-mail estiver cadastrado, enviaremos instruções de recuperação.');
     }
   }
-
-  function redirecionarlogin() {
-    window.location.href = 'login.html';
-}
