@@ -36,3 +36,7 @@ function voltarPagina() {
       alert('Se este e-mail estiver cadastrado, enviaremos instruções de recuperação.');
     }
   }
+
+  function redirecionarlogin() {
+    window.location.href = 'login.html';
+}
