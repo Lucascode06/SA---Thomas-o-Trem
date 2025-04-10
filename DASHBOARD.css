@@ -1,8 +1,4 @@
- .logo{
-    width: 100px;
-    height:100px;
-    }
-    
+   
     
     body {
         background-color: #ffffff;
@@ -49,3 +45,10 @@
     .schedule-button.blue {
         background-color: #007bff;
     }
+
+
+#side-button{
+    display: inline;
+    justify-content: left;
+    flex: end;
+}
