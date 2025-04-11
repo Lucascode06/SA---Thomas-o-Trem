@@ -36,3 +36,12 @@ function voltarPagina() {
       alert('Se este e-mail estiver cadastrado, enviaremos instruções de recuperação.');
     }
   }
+
+  function compararsenhanova(){
+    if (document.getElementById("senhanova").value == document.getElementById("confsenhanova").value){
+      window.location.href = "index.html";
+    }
+    else{
+      alert('As senhas não batem');
+    }
+  }
