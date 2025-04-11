@@ -25,9 +25,9 @@ header {
     margin-bottom: 20px;
 }
 
-.logo {
-    width: 40px;
-    height: 40px;
+#perfil {
+    width: 150px;
+    height:150px;
 }
 
 .user-details {
@@ -69,3 +69,4 @@ header {
 .schedule-item:hover {
     opacity: 0.8;
 }
+
