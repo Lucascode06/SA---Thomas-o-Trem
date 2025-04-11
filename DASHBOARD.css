@@ -38,11 +38,11 @@
         cursor: pointer;
     }
     
-    .schedule-button.red {
+    .red {
         background-color: #dc3545;
     }
     
-    .schedule-button.blue {
+    .blue {
         background-color: #007bff;
     }
 
