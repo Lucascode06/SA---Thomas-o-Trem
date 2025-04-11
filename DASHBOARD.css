@@ -9,6 +9,11 @@ body {
     max-width: 100px; 
 }
 
+.menu {
+    display: block; 
+    margin-bottom: 20px;
+}
+
 #btn {
     padding: 10px 20px;
     background-color: #007BFF; 
@@ -84,3 +89,43 @@ header {
     opacity: 0.8;
 }
 
+.menu-toggle {
+    cursor: pointer;
+}
+
+nav {
+    background: #f8f8f8;
+}
+
+nav.hidden {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.content {
+    padding: 20px;
+}
+
+.horarios button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
