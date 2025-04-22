@@ -5,36 +5,58 @@ body {
     margin: 0;
 }
 
-.logo {
-    max-width: 100px; 
-}
-
-.menu {
-    display: block; 
-    margin-bottom: 20px;
-}
-
-#btn {
-    padding: 10px 20px;
-    background-color: #007BFF; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding-right: 300px;
-}
-
 .container {
     max-width: 400px;
     margin: auto;
-    background-color:rgb(231, 233, 222);;
+    background-color:rgb(231, 233, 222);
     border-radius: 15px;
     padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100px;
+    
+}
+
+#menu{
+    z-index: 3;
+
+}
+
+.menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
 }
 
 header {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+}
+
+nav {
+    background: #f8f8f8;
+}
+
+nav.hidden {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007BFF;
 }
 
 .user-info {
@@ -46,6 +68,7 @@ header {
 #perfil {
     width: 150px;
     height:150px;
+    margin-right: 20px;
 }
 
 .user-details {
@@ -88,43 +111,3 @@ header {
     opacity: 0.8;
 }
 
-.menu-toggle {
-    cursor: pointer;
-}
-
-nav {
-    background: #f8f8f8;
-}
-
-nav.hidden {
-    display: none;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    padding: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #007BFF;
-}
-
-.content {
-    padding: 20px;
-}
-
-.horarios button {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
