@@ -5,6 +5,7 @@ body {
     margin: 0;
 }
 
+
 .container {
     max-width: 400px;
     margin: auto;
@@ -15,21 +16,27 @@ body {
     align-items: center;
 }
 
+
 .logo {
     max-width: 100px;
 }
+
 
 #menu{
     z-index: 3;
     background-color:rgb(44, 85, 116);;
 
 
+
+
 }
+
 
 .menu-toggle {
     cursor: pointer;
     font-size: 24px;
 }
+
 
 header {
     display: flex;
@@ -38,27 +45,33 @@ header {
     margin-bottom: 20px;
 }
 
+
 nav {
     background: #f8f8f8;
 }
 
+
 nav.hidden {
     display: none;
 }
+
 
 nav ul {
     list-style: none;
     padding: 0;
 }
 
+
 nav ul li {
     padding: 10px;
 }
+
 
 nav ul li a {
     text-decoration: none;
     color: #cecece;
 }
+
 
 .user-info {
     display: flex;
@@ -66,15 +79,18 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
+
 #perfil {
     width: 150px;
     height:150px;
     margin-right: 20px;
 }
 
+
 .user-details {
     flex-grow: 1;
 }
+
 
 .schedule {
     background-color: #3498db;
@@ -82,11 +98,13 @@ nav ul li a {
     border-radius: 10px;
 }
 
+
 .schedule h2 {
     color: rgb(0, 0, 0);
     margin: 0 0 15px 0;
     text-align: center;
 }
+
 
 .schedule-item {
     width: 100%;
@@ -97,18 +115,24 @@ nav ul li a {
     color: rgb(0, 0, 0);
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.schedule-item.blue {
+
+.flex {
     background-color: #2980b9;
+    border-radius: 5px;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    text-align: start;
+    margin: 10px ;
 }
 
-.schedule-item:hover {
-    opacity: 0.8;
-}
 
 #temp{
-max-width: 100px;
+max-width: 110px;
+
+
+
 
 }
