@@ -19,7 +19,7 @@ function voltarPagina() {
 }
 
 function voltarPagina2() {
-  window.location.href = "esqueceu-a-senha.html";
+  window.location.href = "EsqueceuASenha.html";
 }
 
 function compararsenhanova() {
