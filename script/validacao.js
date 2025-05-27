@@ -22,12 +22,24 @@ function voltarPagina2() {
   window.location.href = "EsqueceuASenha.html";
 }
 
-function compararsenhanova() {
+function validasenhanova() {
   if (document.getElementById("senhanova").value == document.getElementById("confsenhanova").value) {
     window.location.href = "index.html";
   }
   else {
     alert('As senhas não batem');
   }
+}
+
+function validalogin(){
+window.location.href = "../public/dashboard.html";
+}
+
+function validaemail(){
+window.location.href = "../public/codigoconf.html";
+}
+
+function validaconf(){
+window.location.href = "../public/redefinirsenha.html";
 }
 
