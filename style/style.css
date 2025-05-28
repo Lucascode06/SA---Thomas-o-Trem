@@ -1,100 +1,145 @@
-#thomas{
+/* Base styles */
+#thomas {
   max-width: 100%;
   height: auto;
   justify-items: center;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color:rgb(231, 233, 222);
-    display: flex;
+  font-family: "WDXL Lubrifont TC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(231, 233, 222);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  padding: 40px;
+  border-radius: 5px;
+  width: 300px;
+  margin-top: 20px;
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 10px solid rgb(7, 7, 7);
+  border-radius: 30px;
+  background-color: black;
+  color: white;
+}
+
+.login-container button {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-container a {
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+}
+
+#enviar {
+  background-color: black;
+}
+
+#enviar2 {
+  justify-content: center;
+  background-color: aliceblue;
+  display: flex;
+  color: aliceblue;
+}
+
+#imgVoltar {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  transition: transform 0.2s;
+}
+
+#imgVoltar:hover {
+  transform: scale(1.1);
+}
+
+button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 100px;
+}
+
+a {
+  color: black;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  body {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    padding: 10px;
   }
- 
+
   .login-container {
-    padding: 40px;
-    border-radius: 5px;
-    width: 300px;
-    margin-top: 20px;
-  }
- 
-  .login-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
- 
-  .login-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 10px solid rgb(7, 7, 7);
-    border-radius: 30px;
-    background-color: black;
-    color: white;
-  }
- 
-  .login-container button {
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
- 
-  .login-container a {
-    display: block;
-    text-align: right;
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  .flex{
-    display:flex;
-  }
-
-  #enviar{
-    background-color: black;
-  }
-
-  #enviar2{
-    justify-content:center;
-    background-color: aliceblue;
-    display: flex;
-    color: aliceblue;
+    width: 90%;
+    padding: 20px;
   }
 
   #imgVoltar {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    transition: transform 0.2s;
-  }
-  
-  #imgVoltar:hover {
-    transform: scale(1.1);
+    width: 30px;
+    height: 30px;
   }
 
   button {
-    background-color: black;
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
   }
 
-  button a {
-    color: white;
-    text-align: center;
-    align-items: flex-start;
+  .login-container h1 {
+    font-size: 18px;
   }
 
-  a {
-    color: black;
-    text-decoration: none;
-    text-align: center; 
+  .login-container input {
+    font-size: 14px;
+    padding: 8px;
   }
+
+  .login-container button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  #imgVoltar {
+    width: 25px;
+    height: 25px;
+  }
+}
