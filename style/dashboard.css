@@ -7,16 +7,10 @@ body {
     margin: 0;
 }
 
-/* New rule for when the menu is active */
-body.menu-active {
-    background-color: transparent; /* Makes the background invisible */
-}
-
 .container {
     max-width: 400px;
     margin: auto;
     background-color: rgb(231, 233, 222);
-    border-radius: 15px;
     padding: 20px;
     justify-content: space-between;
     align-items: center;
@@ -26,18 +20,6 @@ body.menu-active {
     max-width: 100px;
 }
 
-#menu {
-    z-index: 3;
-    background-color: rgb(44, 85, 116);
-    /* Add a transition for a smoother effect if desired */
-    transition: background-color 0.3s ease;
-}
-
-.menu-toggle {
-    cursor: pointer;
-    font-size: 24px;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -45,8 +27,24 @@ header {
     margin-bottom: 20px;
 }
 
-nav {
-    background: #f8f8f8; /* This is the background for the nav element itself */
+.menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 4;
+    position: relative;
+}
+
+/* MENU ESTILIZADO */
+#menu {
+    z-index: 10;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgb(44, 85, 116);
+    width: 200px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease;
 }
 
 nav.hidden {
@@ -55,18 +53,25 @@ nav.hidden {
 
 nav ul {
     list-style: none;
+    margin: 0;
     padding: 0;
 }
 
 nav ul li {
-    padding: 10px;
+    padding: 12px 16px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #cecece;
+    color: white;
+    display: block;
 }
 
+nav ul li:hover {
+    background-color: #355c77;
+}
+
+/* USUÁRIO */
 .user-info {
     display: flex;
     align-items: center;
@@ -83,6 +88,7 @@ nav ul li a {
     flex-grow: 1;
 }
 
+/* HORÁRIOS */
 .schedule h2 {
     color: black;
     margin: 0 0 15px 0;
