@@ -12,17 +12,26 @@
 </head>
 
 <body>
+
     <img id="thomas" src="./style/assets/thomasotrem.png" alt="">
 
 
     <div class="login-container">
+
         <form id="infologin">
-            <h1>E-mail usuário:</h1>
-            <input type="email" placeholder="Digite.." id="textoLogin">
-            <h1>Senha:</h1>
-            <input type="password" placeholder="Digite.." id="textoLogin">
-            <button type="submit" onclick="validalogin()"> Enviar </button>
+
+            <label for="email">E-mail usuário:</label>
+            <input type="email" placeholder="Digite.." id="email" name="nome">
+            <div class="erro" id="erroEmail"></div>
+
+            <label for="senha">Senha:</label>
+            <input type="password" placeholder="Digite.." id="senha" name="senha">
+            <div class="erro" id="erroSenha"></div>
+
+            <button type="submit"> Enviar </button>
+
         </form>
+
         <a href="public/EsqueceuASenha.html">Esqueceu a senha?</a>
     </div>
 
