@@ -43,3 +43,29 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
 });
+
+document.addEventListener("DOMContentLoaded", function(){
+  
+  const formulario = document.getElementById("infoemail");
+  formulario.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let valido = true;
+    const email = document.getElementById("email2").value.trim();
+    console.log(email);
+
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+    if(!emailRegex.test(email)){
+      document.getElementById("erroEmail").textContent = "E-mail inválido";
+      valido = false;
+    }
+    if(valido){
+      alert("código enviado");
+      formulario.reset();
+      window.location.href = "public/codigoconf.html";
+    }
+
+  });
+
+});

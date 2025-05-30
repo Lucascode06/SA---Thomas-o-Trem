@@ -13,10 +13,15 @@
     <img id="thomas" src="../style/assets/thomasotrem.png" alt="">
 
     <div class="login-container">
-        <form id="infoemail">
-            <h1>e-mail</h1>
-            <input type="email" id="caixaTexto" placeholder="Digite algo..." required>
-            <button id="botaoEnviar" type="submit" onclick="validaemail()">ENVIAR</button>
+
+        <form id="infoemail"></form>
+
+            <label for="email2">E-mail usuário: </label>
+            <input type="email2" placeholder="Digite.." id="email2" name="email2">
+            <div class="erro" id="erroEmail"></div>
+
+            <button type="submit">ENVIAR</button>
+
         </form>
         <a href="../index.html"><img src="../style/assets/seta-voltar.png" alt="Voltar" id="imgVoltar" /></a>
     </div>
