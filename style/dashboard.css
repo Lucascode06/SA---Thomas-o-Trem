@@ -96,8 +96,8 @@ nav ul li:hover {
 }
 
 .box {
-    margin: 10px;
-    width: 100%;
+    margin: 6px;
+    width: 90%;
     padding: 12px;
     border: none;
     border-radius: 5px;
@@ -112,8 +112,10 @@ nav ul li:hover {
 
 .box.red {
     background-color: #e74c3c;
+    width: 358px;
 }
 
 .box.blue {
     background-color: #3c56e7;
+    width: 358px;
 }
