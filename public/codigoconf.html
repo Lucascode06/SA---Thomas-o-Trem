@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="../style/style.css">
-    <script src="../script/validacao.js"></script>
+    <script src="../script/validacaoconf.js"></script>
 </head>
 
 <body>
@@ -15,12 +15,12 @@
 
     <div class="login-container">
         <form id="infoconf">
-            <h1>código de confirmação</h1>
-            <input type="text" placeholder="Digite.." required/>
-            <button type="submit" onclick="validaconf()"> ENVIAR </button>
+            <label for="conf">Código de Confirmação: </label>
+            <input type="number" placeholder="Digite.." id="conf" name="conf"/>
+            <div class="erro" id="erroEmail"></div>
+            <button type="submit"> ENVIAR </button>
         </form>
         
-
         <img src="../style/assets/seta-voltar.png" alt="Voltar" id="imgVoltar" onclick="voltarPagina2()" />
     </div>
 
