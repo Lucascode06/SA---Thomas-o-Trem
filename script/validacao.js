@@ -1,14 +1,3 @@
-
-/* Confirma se as duas senhas novas são iguais */
-function validasenhanova() {
-  if (document.getElementById("senhanova").value == document.getElementById("confsenhanova").value) {
-    window.location.href = "index.html";
-  }
-  else {
-    alert('As senhas não batem');
-  }
-}
-
 /*Validação*/
 document.addEventListener("DOMContentLoaded", function(){
   
@@ -23,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log(email);
     console.log(senha);
 
-    if(senha.length < 3){
+    if(senha.length < 5){
       document.getElementById("erroSenha").textContent = "Senha inválida";
       valido = false;
     }

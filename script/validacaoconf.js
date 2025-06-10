@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const conf = document.getElementById("conf").value.trim();
     console.log(conf);
 
-    if (conf !== 6) {
+    if (conf.length !== 6) {
       document.getElementById("erroEmail").textContent = "Código errado";
       valido = false;
     }
