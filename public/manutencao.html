@@ -45,51 +45,69 @@
                 </div>
             </div>
             <div class="schedule">
-                    <a class="flex" href="">
-                        <img id="temp" src="../style/assets/trilho.png" alt="">
-                        <div>
-
-
-                            <p><strong>Inspeção de Rodas e Trilhos:</strong></p>
-                            <br>
+                <div class="manutencao-list">
+                    <div class="manutencao-item">
+                        <img class="manutencao-img" src="../style/assets/trilho.png" alt="">
+                        <div class="manutencao-info">
+                            <p><strong>Inspeção de Rodas e Trilhos</strong></p>
                         </div>
-                    </a>
-                    <a class="flex" href="">
-                        <img id="temp" src="../style/assets/motor_1.png" alt="">
-                        <div>
-
-
-                            <p><strong> Manutenção do Motor</strong></p>
-                            <br>
-
-
+                        <div class="botoes">
+                            <button><i class="fas fa-check"></i></button>
+                            <button><i class="fas fa-times"></i></button>
                         </div>
-                    </a>
-                    <a class="flex" href="">
-                        <img id="temp" src="../style/assets/motor-removebg-preview.png" alt="">
-                        <div>
-
-
-                            <p><strong> Manutenção do Sistema de Freios</strong></p>
-                            <br>
-
-
+                    </div>
+                    <div class="manutencao-item">
+                        <img class="manutencao-img" src="../style/assets/motor_1.png" alt="">
+                        <div class="manutencao-info">
+                            <p><strong>Manutenção do Motor</strong></p>
                         </div>
-                    </a>
-                    <a class="flex" href="">
-                        <img id="temp" src="../style/assets/vagao.png" alt="">
-                        <div>
-
-
-                           <button class="box blue">Trem X - Estação Y - 11:50</button> 
-
+                        <div class="botoes">
+                            <button><i class="fas fa-check"></i></button>
+                            <button><i class="fas fa-times"></i></button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="manutencao-item">
+                        <img class="manutencao-img" src="../style/assets/motor-removebg-preview.png" alt="">
+                        <div class="manutencao-info">
+                            <p><strong>Manutenção do Sistema de Freios</strong></p>
+                        </div>
+                        <div class="botoes">
+                            <button><i class="fas fa-check"></i></button>
+                            <button><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="manutencao-item">
+                        <img class="manutencao-img" src="../style/assets/vagao.png" alt="">
+                        <div class="manutencao-info">
+                            <p><strong>Inspeção de Vagões</strong></p>
+                        </div>
+                        <div class="botoes">
+                            <button><i class="fas fa-check"></i></button>
+                            <button><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
         </main>
     </div>
+    <script src="../script/dash.js"></script>
+<script>
+// Torna botão verde ou vermelho ao clicar
+const botoes = document.querySelectorAll('.botoes button');
+botoes.forEach(btn => {
+  btn.addEventListener('click', function() {
+    const grupo = this.parentElement.querySelectorAll('button');
+    grupo.forEach(b => b.classList.remove('selected-certo', 'selected-errado'));
+    if (this.querySelector('.fa-check')) {
+      this.classList.add('selected-certo');
+    } else if (this.querySelector('.fa-times')) {
+      this.classList.add('selected-errado');
+    }
+  });
+});
+</script>
 </body>
 </html>
 
