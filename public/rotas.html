@@ -1,14 +1,45 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<!-- Rotas dos trens -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
     <title>Rotas</title>
+    <link rel="stylesheet" href="../style/rotas.css">
 </head>
+
 <body>
-
-
+    <div class="container">
+        <header>
+            <img src="../style/assets/thomasotrem.png" alt="Logo" class="logo">
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </header>
+        <nav id="menu" class="hidden">
+            <ul>
+                <li><a href="dashboard.html">Inicio</a></li>
+                <li><a href="rotas.html">Rotas</a></li>
+                <li><a href="notificacao.html">Notificação</a></li>
+                <li><a href="relatorio.html">Relatorio</a></li>
+                <li><a href="manutencao.html">Manutenção</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="../index.html">Sair</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1> <span class="rotas-title-text">ROTAS</span>
+                <span class="rotas-title-icon"><i class="fas fa-map-marker-alt"></i></span>
+            </h1>
+            <div class="rotas-img-wrapper">
+                <img src="../style/assets/Rota.png" alt="Rotas dos Trens" class="rotas-img">
+            </div>
+            <div class="rotas-botoes">
+                <button class="rota-btn">Rota 1</button>
+                <button class="rota-btn">Rota 2</button>
+                <button class="rota-btn">Rota 3</button>
+            </div>
+        </main>
+    </div>
+    <script src="../script/dash.js"></script>
 </body>
+
 </html>
