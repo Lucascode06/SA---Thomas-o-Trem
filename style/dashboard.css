@@ -1,134 +1,162 @@
+/* === BASE === */
 body {
-    font-family: "WDXL Lubrifont TC", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: rgb(231, 233, 222);
-    color: #34495e;
-    margin: 0;
+  font-family: "WDXL Lubrifont TC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(231, 233, 222);
+  color: #34495e;
+  margin: 0;
 }
 
+/* === CONTAINER PRINCIPAL === */
 .container {
-    max-width: 400px;
-    margin: auto;
-    background-color: rgb(231, 233, 222);
-    padding: 20px;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 400px;
+  margin: auto;
+  background-color: rgb(231, 233, 222);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === HEADER === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .logo {
-    max-width: 100px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  max-width: 100px;
 }
 
 .menu-toggle {
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 4;
-    position: relative;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 4;
+  position: relative;
 }
 
-/* MENU ESTILIZADO */
+/* === MENU DE NAVEGAÇÃO === */
 #menu {
-    z-index: 10;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: rgb(44, 85, 116);
-    width: 200px;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: opacity 0.3s ease;
+  z-index: 10;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: rgb(44, 85, 116);
+  width: 200px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
 }
 
 nav.hidden {
-    display: none;
+  display: none;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-    padding: 12px 16px;
+  padding: 12px 16px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    display: block;
+  text-decoration: none;
+  color: white;
+  display: block;
 }
 
 nav ul li:hover {
-    background-color: #355c77;
+  background-color: #355c77;
 }
 
-/* USUÁRIO */
+/* === USUÁRIO === */
 .user-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 #perfil {
-    width: 150px;
-    height: 150px;
-    margin-right: 20px;
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
 }
 
 .user-details {
-    flex-grow: 1;
+  flex-grow: 1;
+  text-align: left;
 }
 
-/* HORÁRIOS */
+/* === HORÁRIOS === */
 .schedule h2 {
-    color: black;
-    margin: 0 0 15px 0;
-    text-align: center;
+  color: black;
+  margin: 0 0 15px 0;
+  text-align: center;
 }
 
 .box {
-    margin: 6px;
-    width: 90%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+  margin: 20px;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
 }
 
 .box h2 {
-    color: #34495e;
+  color: #34495e;
 }
 
 .box.red {
-    background-color: #e74c3c;
-    width: 358px;
+  background-color: #e74c3c;
+  width: 358px;
 }
 
 .box.blue {
-    background-color: #3c56e7;
-    width: 358px;
+  background-color: #3c56e7;
+  width: 358px;
 }
 
+/* === RELATÓRIOS === */
+.relatorio-box {
+  background-color: #5ba5e4;
+  padding: 20px;
+  border-radius: 25px;
+  text-align: center;
+}
 
-#menu {
-    z-index: 10;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: rgb(44, 85, 116);
-    width: 200px;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: opacity 0.3s ease;
+.relatorio-card {
+  background-color: #354c5f;
+  border-radius: 15px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+}
+
+.relatorio-btn {
+  color: white;
+  font-weight: bold;
+}
+
+.relatorio-imagens {
+  display: flex;
+  gap: 180px; /* espaço entre as imagens */
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.relatorio-icone {
+  width: 90px;
 }
