@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/notificacao.css">
     <title>Notificação</title>
+    <script src="../script/dash.js"></script>
 </head>
 
 <body>
@@ -17,12 +18,13 @@
         </header>
         <nav id="menu" class="hidden">
             <ul>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="../public/dashboard.html">Inicio</a></li>
                 <li><a href="rotas.html">Rotas</a></li>
                 <li><a href="notificacao.html">Notificação</a></li>
                 <li><a href="relatorio.html">Relatorio</a></li>
                 <li><a href="manutencao.html">Manutenção</a></li>
                 <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="../index.html">Sair</a></li>
             </ul>
         </nav>
     </div>
@@ -39,22 +41,34 @@
             </div>
         </div>
         <div class="schedule">
-            <a class="flex" href="">
-                <img id="temp" src="../style/assets/tempestade.png" alt="">
-                <div>
+            <div class="notificacao-item">
+                <img class="notificacao-img" src="../style/assets/tempestade.png" alt="">
+                <div class="notificacao-info">
                     <p><strong>Tempestade:</strong></p>
-                    <br>
-                    <p>Causa:Alerta de fortes chuvas</p>
+                    <p>Causa: Alerta de fortes chuvas</p>
                 </div>
-            </a>
-            <a class="flex" href="">
-                <img id="temp" src="../style/assets/tempestade.png" alt="">
-                <div>
+            </div>
+            <div class="notificacao-item">
+                <img class="notificacao-img" src="../style/assets/tempestade.png" alt="">
+                <div class="notificacao-info">
                     <p><strong>Desvio de rota:</strong></p>
-                    <br>
-                    <p>Causa:Manutençao nos trilhos</p>
+                    <p>Causa: Manutenção nos trilhos</p>
                 </div>
-            </a>
+            </div>
+            <div class="notificacao-item">
+                <img class="notificacao-img" src="../style/assets/tempestade.png" alt="">
+                <div class="notificacao-info">
+                    <p><strong>Tempestade:</strong></p>
+                    <p>Causa: Alerta de fortes chuvas</p>
+                </div>
+            </div>
+            <div class="notificacao-item">
+                <img class="notificacao-img" src="../style/assets/tempestade.png" alt="">
+                <div class="notificacao-info">
+                    <p><strong>Desvio de rota:</strong></p>
+                    <p>Causa: Manutenção nos trilhos</p>
+                </div>
+            </div>
         </div>
     </main>
 </body>
