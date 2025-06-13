@@ -11,12 +11,19 @@
 
     <body>
         <div class="container">
-            <header>
-                 <script src="../script/dash.js"></script>
-                <img src="../style/assets/thomasotrem.png" alt="Logo" class="logo">
-                <div>
-                    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            </header>
+           <header>
+  <img src="../style/assets/thomasotrem.png" alt="Logo" class="logo">
+  
+  <div class="titulo-container">
+    <h1 class="titulo">MANUTENÇÃO</h1>
+
+  </div>
+  
+          <script src="../script/dash.js"></script>
+    
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
+
             <nav id="menu" class="hidden">
                 <ul>
                     <li><a href="dashboard.html">Inicio</a></li>
@@ -33,58 +40,47 @@
 
 
         <main>
-            <div class="user-info">
-                <img id="perfil" src="../style/assets/Logo.png" alt="">
-                <div class="user-details">
-                    <p><strong>Cargo:</strong> xxxxx</p>
-                    <p><strong>Nome:</strong> xxxxx</p>
-                    <p><strong>Idade:</strong> xx</p>
-                    <p><strong>CPF:</strong> xxxxxxxxxxxx</p>
-                    <p><strong>Email:</strong> xxxxxxxxxxxxxx.xxx</p>
-                </div>
-            </div>
-            <div class="schedule">
-                    <a class="flex" href="">
-                        <img id="temp" src="../style/assets/trilho.png" alt="">
-                        <div>
+      
+            
+            
+<div class="schedule">
+  <div class="bloco">
+    <img src="../style/assets/trilho.png" alt="">
+    <p>Inspeção de Rodas e Trilhos</p>
+    <div class="botoes">
+      <button>✔</button>
+      <button>✖</button>
+    </div>
+  </div>
 
+  <div class="bloco">
+    <img src="../style/assets/motor_1.png" alt="">
+    <p>Manutenção do Motor</p>
+    <div class="botoes">
+      <button>✔</button>
+      <button>✖</button>
+    </div>
+  </div>
 
-                            <p><strong>Inspeção de Rodas e Trilhos:</strong></p>
-                            <br>
-                        </div>
-                    </a>
-                    <a class="flex" href="">
-                        <img id="temp" src="../style/assets/motor_1.png" alt="">
-                        <div>
+  <div class="bloco">
+    <img src="../style/assets/motor-removebg-preview.png" alt="">
+    <p>Manutenção do Sistema de Freios</p>
+    <div class="botoes">
+      <button>✔</button>
+      <button>✖</button>
+    </div>
+  </div>
 
+  <div class="bloco">
+    <img src="../style/assets/vagao.png" alt="">
+    <p>Inspeção de Vagões</p>
+    <div class="botoes">
+      <button>✔</button>
+      <button>✖</button>
+    </div>
+  </div>
+</div>
 
-                            <p><strong> Manutenção do Motor</strong></p>
-                            <br>
-
-
-                        </div>
-                    </a>
-                    <a class="flex" href="">
-                        <img id="temp" src="../style/assets/motor-removebg-preview.png" alt="">
-                        <div>
-
-
-                            <p><strong> Manutenção do Sistema de Freios</strong></p>
-                            <br>
-
-
-                        </div>
-                    </a>
-                    <a class="flex" href="">
-                        <img id="temp" src="../style/assets/vagao.png" alt="">
-                        <div>
-
-
-                           <button class="box blue">Trem X - Estação Y - 11:50</button> 
-
-                        </div>
-                    </a>
-            </div>
 
 
         </main>
