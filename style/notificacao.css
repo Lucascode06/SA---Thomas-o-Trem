@@ -91,11 +91,10 @@ nav ul li:hover {
 
 
 #perfil {
-    width: 80px;
-    height: 80px;
-    margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
 }
-
 
 .user-details {
     flex-grow: 1;
@@ -161,41 +160,6 @@ nav ul li:hover {
     font-size: 15px;
     line-height: 1.3;
 }
-
-
-@media (max-width: 600px) {
-    .container {
-        border-radius: 8px;
-        max-width: 100%;
-        padding: 0 0 10px 0;
-    }
-    header {
-        padding: 14px 10px 0 10px;
-    }
-    .schedule {
-        padding: 10px;
-        border-radius: 8px;
-    }
-    .notificacao-item {
-        padding: 8px;
-        border-radius: 6px;
-        gap: 10px;
-    }
-    .notificacao-img {
-        max-width: 40px;
-    }
-    .notificacao-info p {
-        font-size: 13px;
-    }
-    #perfil {
-        width: 60px;
-        height: 60px;
-    }
-    .user-info {
-        margin-bottom: 12px;
-    }
-}
-
 
 #menu {
     z-index: 10;

@@ -20,12 +20,17 @@
             </header>
             <nav id="menu" class="hidden">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="dashboard.html">Inicio</a></li>
                     <li><a href="rotas.html">Rotas</a></li>
                     <li><a href="notificacao.html">Notificação</a></li>
                     <li><a href="relatorio.html">Relatorio</a></li>
                     <li><a href="manutencao.html">Manutenção</a></li>
                     <li><a href="suporte.html">Suporte</a></li>
+                    <li><a href="../index.html">Sair</a></li>
+                    
+
+
+
                 </ul>
             </nav>
         </div>
@@ -93,21 +98,6 @@
         </main>
     </div>
     <script src="../script/dash.js"></script>
-<script>
-// Torna botão verde ou vermelho ao clicar
-const botoes = document.querySelectorAll('.botoes button');
-botoes.forEach(btn => {
-  btn.addEventListener('click', function() {
-    const grupo = this.parentElement.querySelectorAll('button');
-    grupo.forEach(b => b.classList.remove('selected-certo', 'selected-errado'));
-    if (this.querySelector('.fa-check')) {
-      this.classList.add('selected-certo');
-    } else if (this.querySelector('.fa-times')) {
-      this.classList.add('selected-errado');
-    }
-  });
-});
-</script>
 </body>
 </html>
 
