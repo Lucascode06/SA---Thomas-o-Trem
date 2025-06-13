@@ -42,32 +42,14 @@ header {
 .menu-toggle {
     cursor: pointer;
     font-size: 24px;
-    z-index: 20;
-    position: relative;
-    background: none;
-    border: none;
-    color: #34495e;
-    transition: color 0.2s;
 }
 
 
-.menu-toggle.active {
-    color: #3c56e7;
-}
-
-/* MENU ESTILIZADO */
-#menu {
-    z-index: 15;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: rgb(44, 85, 116);
-    width: 200px;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    opacity: 1;
-    visibility: visible;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 
@@ -219,4 +201,17 @@ nav ul li:hover {
     .user-info {
         margin-bottom: 12px;
     }
+}
+
+
+#menu {
+    z-index: 10;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgb(44, 85, 116);
+    width: 200px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease;
 }

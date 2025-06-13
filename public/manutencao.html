@@ -8,51 +8,86 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="../script/dash.js"></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <img src="../style/assets/thomasotrem.png" alt="Logo" class="logo">
-            <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-        </header>
-        <nav id="menu" class="hidden">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="rotas.html">Rotas</a></li>
-                <li><a href="notificacao.html">Notificação</a></li>
-                <li><a href="relatorio.html">Relatorio</a></li>
-                <li><a href="manutencao.html">Manutenção</a></li>
-                <li><a href="suporte.html">Suporte</a></li>
-                <li><a href="../index.html">Sair</a></li>
-            </ul>
-        </nav>
+
+
+    <body>
+        <div class="container">
+            <header>
+                 <script src="../script/dash.js"></script>
+                <img src="../style/assets/thomasotrem.png" alt="Logo" class="logo">
+                <div>
+                    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            </header>
+            <nav id="menu" class="hidden">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="rotas.html">Rotas</a></li>
+                    <li><a href="notificacao.html">Notificação</a></li>
+                    <li><a href="relatorio.html">Relatorio</a></li>
+                    <li><a href="manutencao.html">Manutenção</a></li>
+                    <li><a href="suporte.html">Suporte</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+
         <main>
-            <h1>MANUTENÇÃO</h1>
-            <div class="maintenance-list">
-                <div class="maintenance-item">
-                    <i class="fas fa-train maintenance-img"></i>
-                    <span class="maintenance-name">Inspeção de Rodas e Trilhos</span>
-                    <button class="status completed"><i class="fas fa-check"></i></button>
-                    <button class="status pending"><i class="fas fa-times"></i></button>
-                </div>
-                <div class="maintenance-item">
-                    <i class="fas fa-cogs maintenance-img"></i>
-                    <span class="maintenance-name">Manutenção do Motor</span>
-                    <button class="status completed"><i class="fas fa-check"></i></button>
-                    <button class="status pending"><i class="fas fa-times"></i></button>
-                </div>
-                <div class="maintenance-item">
-                    <i class="fas fa-cog maintenance-img"></i>
-                    <span class="maintenance-name">Manutenção do Sistema de Freios</span>
-                    <button class="status completed"><i class="fas fa-check"></i></button>
-                    <button class="status pending"><i class="fas fa-times"></i></button>
-                </div>
-                <div class="maintenance-item">
-                    <i class="fas fa-truck maintenance-img"></i>
-                    <span class="maintenance-name">Inspeção de Vagões</span>
-                    <button class="status completed"><i class="fas fa-check"></i></button>
-                    <button class="status pending"><i class="fas fa-times"></i></button>
+            <div class="user-info">
+                <img id="perfil" src="../style/assets/Logo.png" alt="">
+                <div class="user-details">
+                    <p><strong>Cargo:</strong> xxxxx</p>
+                    <p><strong>Nome:</strong> xxxxx</p>
+                    <p><strong>Idade:</strong> xx</p>
+                    <p><strong>CPF:</strong> xxxxxxxxxxxx</p>
+                    <p><strong>Email:</strong> xxxxxxxxxxxxxx.xxx</p>
                 </div>
             </div>
+            <div class="schedule">
+                    <a class="flex" href="">
+                        <img id="temp" src="../style/assets/trilho.png" alt="">
+                        <div>
+
+
+                            <p><strong>Inspeção de Rodas e Trilhos:</strong></p>
+                            <br>
+                        </div>
+                    </a>
+                    <a class="flex" href="">
+                        <img id="temp" src="../style/assets/motor_1.png" alt="">
+                        <div>
+
+
+                            <p><strong> Manutenção do Motor</strong></p>
+                            <br>
+
+
+                        </div>
+                    </a>
+                    <a class="flex" href="">
+                        <img id="temp" src="../style/assets/motor-removebg-preview.png" alt="">
+                        <div>
+
+
+                            <p><strong> Manutenção do Sistema de Freios</strong></p>
+                            <br>
+
+
+                        </div>
+                    </a>
+                    <a class="flex" href="">
+                        <img id="temp" src="../style/assets/vagao.png" alt="">
+                        <div>
+
+
+                           <button class="box blue">Trem X - Estação Y - 11:50</button> 
+
+                        </div>
+                    </a>
+            </div>
+
+
         </main>
     </div>
 </body>
