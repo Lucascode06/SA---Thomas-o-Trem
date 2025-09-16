@@ -29,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($dados) {
         $_SESSION["id"] = $dados["id"];
-        $_SESSION["senha"] = $dados["senha"];
         $_SESSION["email"] = $dados["email"];
-        header("Location: public/dashboard.html");
+        header("Location: public/dashboard.php");
+        echo "Login bem-sucedido!";
         exit;
     } else {
         $msg = "Usuário ou senha incorretos!";
@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
 
     <img id="thomas" src="./style/assets/thomasotrem.png" alt="">
-
 
     <div class="login-container">
 
