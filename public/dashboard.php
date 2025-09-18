@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+// Verifica se é admin
+$isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -30,7 +37,10 @@
         <li><a href="relatorio.html">Relatorio</a></li>
         <li><a href="manutencao.html">Manutenção</a></li>
         <li><a href="suporte.html">Suporte</a></li>
-        <li><a href="../index.html">Sair</a></li>
+        <?php if ($isAdmin): ?>
+          <li><a href="../cadastro.php">Cadastrar Funcionário</a></li>
+        <?php endif; ?>
+        <li><a href="../index.php">Sair</a></li>
       </ul>
     </nav>
   </div>

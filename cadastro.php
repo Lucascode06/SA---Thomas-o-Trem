@@ -1,40 +1,24 @@
 <?php
 // 1) Conexão
 include 'db.php';
+
 session_start();
 
-// 3) Login
+// 3) CADASTRO
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nome = $_POST["nome"] ?? "";
     $email = $_POST["email"] ?? "";
     $senha = $_POST["senha"] ?? "";
 
-    // Login ADMIN
-    if ($email === "admin@admin.com" && $senha === "123") {
-        $_SESSION["admin"] = true;
-        $_SESSION["email"] = $email;
-        header("Location: public/dashboard.php");
-        exit;
-    } else {
-        // Login pelo banco de dados (outros usuários)
-        $stmt = $mysqli->prepare("SELECT id, email, senha FROM usuarios WHERE email=? AND senha=?");
-        $stmt->bind_param("ss", $email, $senha);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $dados = $result->fetch_assoc();
-        $stmt->close();
-    }
+    $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $nome, $email, $senha);
+    $stmt->execute();
+    $stmt->close();
 
-    if ($dados) {
-        $_SESSION["id"] = $dados["id"];
-        $_SESSION["email"] = $dados["email"];
-        $_SESSION["funcionario"] = true;
-        header("Location: public/dashboard.php");
-        exit;
-    } else {
-        $msg = "Usuário ou senha incorretos!";
-    }
+    $msg = "Funcionário cadastrado com sucesso!";
 }
+
 ?>
 
 <html lang="en">
@@ -46,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=WDXL+Lubrifont+TC&display=swap">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -68,16 +52,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php else: ?>
 
         <div class="card">
-            <h3>Login</h3>
+            <h3>Cadastro</h3>
             <?php if ($msg): ?>
                 <p class="msg"><?php echo $msg; ?></p>
 
         <?php endif; ?>
 
                 <form method="post">
+                    <input type="text" name="nome" placeholder="Nome" required>
                     <input type="email" name="email" placeholder="E-mail" required>
                     <input type="password" name="senha" placeholder="Senha" required>
-                    <button type="submit">Entrar</button>
+                    <button type="submit">Cadastrar Funcionário</button>
                 </form>
 
             <?php endif; ?>
