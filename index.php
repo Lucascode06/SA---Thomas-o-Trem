@@ -3,6 +3,8 @@
 include 'db.php';
 session_start();
 
+include 'logout.php';
+
 // 3) Login
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -50,42 +52,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 <body>
-
     <img id="thomas" src="./style/assets/thomasotrem.png" alt="">
 
     <div class="login-container">
 
         <?php if (!empty($_SESSION["id"])): ?>
 
-        <div class="card">
+            <div class="card">
 
-            <h3>Bem-vindo!</h3>
-            <p>Sessão ativa.</p>
-            <p><a href="?logout=1">Sair</a></p>
+                <h3>Bem-vindo!</h3>
+                <p>Sessão ativa.</p>
+                <a href="?logout=1">Sair</a>
 
-        </div>
+            </div>
 
         <?php else: ?>
 
-        <div class="card">
-            <h3>Login</h3>
-            <?php if ($msg): ?>
-                <p class="msg"><?php echo $msg; ?></p>
+            <div class="card">
+                <h3>Login</h3>
 
-        <?php endif; ?>
+                <?php if ($msg): ?><p class="msg"><?php echo $msg; ?></p><?php endif; ?>
 
                 <form method="post">
                     <input type="email" name="email" placeholder="E-mail" required>
                     <input type="password" name="senha" placeholder="Senha" required>
                     <button type="submit">Entrar</button>
                 </form>
-
-            <?php endif; ?>
-        </div>
+            </div>
+        
+        <?php endif; ?>
 
         <a href="public/esqueceuasenha.html">Esqueceu a senha?</a>
     </div>
-
 </body>
 
 </html>

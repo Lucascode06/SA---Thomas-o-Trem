@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include '../logout.php';
 // Verifica se é admin
 $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
 ?>
@@ -40,7 +40,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
         <?php if ($isAdmin): ?>
           <li><a href="../cadastro.php">Cadastrar Funcionário</a></li>
         <?php endif; ?>
-        <li><a href="../index.php">Sair</a></li>
+        <li><a href="../?logout=1">Sair</a></li>
       </ul>
     </nav>
   </div>

@@ -41,14 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <?php if (!empty($_SESSION["id"])): ?>
 
-        <div class="card">
-
-            <h3>Bem-vindo!</h3>
-            <p>Sessão ativa.</p>
-            <p><a href="?logout=1">Sair</a></p>
-
-        </div>
-
         <?php else: ?>
 
         <div class="card">
@@ -68,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <?php endif; ?>
         </div>
 
-        <a href="public/esqueceuasenha.html">Esqueceu a senha?</a>
+
     </div>
 
 </body>
