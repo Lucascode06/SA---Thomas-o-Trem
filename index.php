@@ -8,26 +8,29 @@ include 'logout.php';
 // 3) Login
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nome = $_POST["nome"] ?? "";
     $email = $_POST["email"] ?? "";
     $senha = $_POST["senha"] ?? "";
 
     // Login ADMIN
     if ($email === "admin@admin.com" && $senha === "123") {
+        $_SESSION["nome"] = "admin";
         $_SESSION["admin"] = true;
         $_SESSION["email"] = $email;
         header("Location: public/dashboard.php");
         exit;
     } else {
         // Login pelo banco de dados (outros usuários)
-        $stmt = $mysqli->prepare("SELECT id, email, senha FROM usuarios WHERE email=? AND senha=?");
-        $stmt->bind_param("ss", $email, $senha);
+        $stmt = $mysqli->prepare("SELECT id, nome, email, senha FROM usuarios WHERE nome=? AND email=? AND senha=?");
+        $stmt->bind_param("sss", $nome, $email, $senha);
         $stmt->execute();
         $result = $stmt->get_result();
-        $dados = $result->fetch_assoc();
+        $dados = $result->fetch_assoc(); 
         $stmt->close();
     }
 
     if ($dados) {
+        $_SESSION["nome"] = $dados["nome"];
         $_SESSION["id"] = $dados["id"];
         $_SESSION["email"] = $dados["email"];
         $_SESSION["funcionario"] = true;
@@ -74,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <?php if ($msg): ?><p class="msg"><?php echo $msg; ?></p><?php endif; ?>
 
                 <form method="post">
+                    <input type="text" name="nome" placeholder="Nome" required>
                     <input type="email" name="email" placeholder="E-mail" required>
                     <input type="password" name="senha" placeholder="Senha" required>
                     <button type="submit">Entrar</button>

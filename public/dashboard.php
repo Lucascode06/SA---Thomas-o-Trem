@@ -48,16 +48,25 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
   <!-- Conteúdo principal -->
   <main>
     <h1>DASHBOARD</h1>
-
+    
     <!-- Informações do usuário -->
     <div class="user-info">
       <img id="perfil" src="../style/assets/Logo.png" alt="Foto de perfil">
       <div class="user-details">
-        <p><strong>Cargo:</strong> xxxxx</p>
-        <p><strong>Nome:</strong> xxxxx</p>
-        <p><strong>Idade:</strong> xx</p>
-        <p><strong>CPF:</strong> xxxxxxxxxxxx</p>
-        <p><strong>Email:</strong> xxxxxxxxxxxxxx.xxx</p>
+
+        <?php
+
+        if ($isAdmin) {
+            echo "<p><strong>Usuário:</strong> Administrador</p>";
+        } else {
+            echo "<p><strong>Usuário:</strong> Funcionário</p>";
+        }
+        echo 
+        "<p><strong>Nome:</strong> " . $_SESSION['nome'] . "</p>
+         <p><strong>Email:</strong> " . $_SESSION['email'] . "</p>";
+
+        ?>
+
       </div>
     </div>
 
