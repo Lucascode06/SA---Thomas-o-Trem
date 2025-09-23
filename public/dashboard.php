@@ -12,7 +12,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="../style/dashboard.css">
+  <link rel="stylesheet" href="../style/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=WDXL+Ludabrifont+TC&display=swap"
@@ -20,21 +20,20 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
   <script src="../script/dash.js"></script>
 </head>
 
-<body>
+<body class="dashboard-page">
   <!-- Container principal -->
   <div class="container">
     <header>
       <img src="../style/assets/thomasotrem.png" alt="Logo" class="logo">
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
-
     <!-- Menu de navegação -->
     <nav id="menu" class="hidden">
       <ul>
-        <li><a href="dashboard.html">Inicio</a></li>
+        <li><a href="dashboard.php">Início</a></li>
         <li><a href="rotas.html">Rotas</a></li>
         <li><a href="notificacao.html">Notificação</a></li>
-        <li><a href="relatorio.html">Relatorio</a></li>
+        <li><a href="relatorio.html">Relatório</a></li>
         <li><a href="manutencao.html">Manutenção</a></li>
         <li><a href="suporte.html">Suporte</a></li>
         <?php if ($isAdmin): ?>

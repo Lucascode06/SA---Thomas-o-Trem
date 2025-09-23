@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="style/style.css">
 </head>
 
-<body>
+<body class="login-page">
     <img id="thomas" src="./style/assets/thomasotrem.png" alt="">
 
     <div class="login-container">
