@@ -12,28 +12,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"] ?? "";
     $senha = $_POST["senha"] ?? "";
 
-    // Login ADMIN
-    if ($email === "admin@admin.com" && $senha === "123") {
-        $_SESSION["nome"] = "admin";
-        $_SESSION["admin"] = true;
-        $_SESSION["email"] = $email;
-        header("Location: public/dashboard.php");
-        exit;
-    } else {
+    
         // Login pelo banco de dados (outros usuários)
-        $stmt = $mysqli->prepare("SELECT id, nome, email, senha FROM usuarios WHERE nome=? AND email=? AND senha=?");
+        $stmt = $mysqli->prepare("SELECT id, nome, email, senha, role FROM usuarios WHERE nome=? AND email=? AND senha=?");
         $stmt->bind_param("sss", $nome, $email, $senha);
         $stmt->execute();
         $result = $stmt->get_result();
         $dados = $result->fetch_assoc(); 
         $stmt->close();
-    }
+    
+
+
 
     if ($dados) {
         $_SESSION["nome"] = $dados["nome"];
         $_SESSION["id"] = $dados["id"];
         $_SESSION["email"] = $dados["email"];
         $_SESSION["funcionario"] = true;
+
+        if ($dados["role"] === "admin") {
+            $_SESSION["admin"] = true;
+        }
+
         header("Location: public/dashboard.php");
         exit;
     } else {
