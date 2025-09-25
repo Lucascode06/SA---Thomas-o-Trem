@@ -37,7 +37,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
         <li><a href="manutencao.html">Manutenção</a></li>
         <li><a href="suporte.html">Suporte</a></li>
         <?php if ($isAdmin): ?>
-          <li><a href="../cadastro.php">Cadastrar Funcionário</a></li>
+          <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
         <?php endif; ?>
         <li><a href="../?logout=1">Sair</a></li>
       </ul>
