@@ -23,6 +23,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .login-container h1, .login-container h3 {
   text-align: center;
@@ -1466,3 +1468,95 @@ body.login-page {
 }
 
 /* Responsivo e utilitários podem ser mantidos globais ou também agrupados se necessário */
+
+/* Cadastro Section */
+.cadastro-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+.cadastro-card {
+  margin: 0 auto;
+}
+.login-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  width: 100%;
+}
+.cadastro-form input {
+  padding: 12px;
+  border: 1.5px solid #cfd8dc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  background: #f7faff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px #e3eaff;
+  outline: none;
+}
+.cadastro-form input:focus {
+  border-color: #4f6fa3;
+  box-shadow: 0 2px 8px #b3c6e6;
+  background: #e3eaff;
+}
+.cadastro-form button {
+  background: linear-gradient(90deg, #2a3a5e 60%, #4f6fa3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #e3eaff;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+.cadastro-form button:hover {
+  background: linear-gradient(90deg, #4f6fa3 60%, #2a3a5e 100%);
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px #b3c6e6;
+}
+.cadastro-form button {
+  background: linear-gradient(90deg, #2a3a5e 60%, #4f6fa3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #e3eaff;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+.cadastro-form button:hover {
+  background: linear-gradient(90deg, #4f6fa3 60%, #2a3a5e 100%);
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px #b3c6e6;
+}
+
+.cadastro-form button {
+  background: linear-gradient(90deg, #2a3a5e 60%, #4f6fa3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #e3eaff;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+.cadastro-form button:hover {
+  background: linear-gradient(90deg, #4f6fa3 60%, #2a3a5e 100%);
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px #b3c6e6;
+}
