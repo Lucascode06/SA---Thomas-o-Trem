@@ -35,7 +35,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
         <li><a href="notificacao.html">Notificação</a></li>
         <li><a href="relatorio.html">Relatório</a></li>
         <li><a href="manutencao.html">Manutenção</a></li>
-        <li><a href="suporte.html">Suporte</a></li>
+        <li><a href="suporte.php">Suporte</a></li>
         <?php if ($isAdmin): ?>
           <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
           <li><a href="read.php">Gerenciar Usuários</a></li>
