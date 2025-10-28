@@ -24,8 +24,8 @@
       <label for="viacep-cidade">Cidade:</label>
       <input type="text" id="viacep-cidade" readonly>
 
-      <label for="viacep-uf">UF:</label>
-      <input type="text" id="viacep-uf" readonly>
+  <label for="viacep-uf">Estado:</label>
+  <input type="text" id="viacep-uf" readonly>
     </form>
   </div>
 

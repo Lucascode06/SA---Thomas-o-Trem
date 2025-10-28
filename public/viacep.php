@@ -60,7 +60,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
           <label for="viacep-cidade">Cidade:</label>
           <input type="text" id="viacep-cidade" name="cidade" readonly>
 
-          <label for="viacep-uf">UF:</label>
+          <label for="viacep-uf">Estado:</label>
           <input type="text" id="viacep-uf" name="uf" readonly>
 
           <p style="margin-top:12px; color:#2c5574; font-size:14px;">Digite o CEP e clique fora do campo para buscar automaticamente.</p>
