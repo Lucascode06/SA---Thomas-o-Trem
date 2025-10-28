@@ -8,9 +8,10 @@ create table usuarios (
     senha varchar(20) not null,
     role enum('admin', 'user') default 'user' not null,
     cep char (8) not null,
-    endereco varchar(255) not null,
-    bairro varchar(100) not null,
-    numero int not null
+    rua varchar(255) not null,
+    bairro varchar(255) not null,\
+    cidade varchar(255) not null,
+    estado char(2) not null
     );
 
 create table trens (
