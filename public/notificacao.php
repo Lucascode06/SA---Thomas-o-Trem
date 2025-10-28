@@ -18,13 +18,13 @@
         </header>
         <nav id="menu" class="hidden">
             <ul>
-                <li><a href="../public/dashboard.html">Inicio</a></li>
-                <li><a href="rotas.html">Rotas</a></li>
-                <li><a href="notificacao.html">Notificação</a></li>
-                <li><a href="relatorio.html">Relatorio</a></li>
-                <li><a href="manutencao.html">Manutenção</a></li>
+                <li><a href="../public/dashboard.php">Inicio</a></li>
+                <li><a href="rotas.php">Rotas</a></li>
+                <li><a href="notificacao.php">Notificação</a></li>
+                <li><a href="relatorio.php">Relatorio</a></li>
+                <li><a href="manutencao.php">Manutenção</a></li>
                 <li><a href="suporte.php">Suporte</a></li>
-                <li><a href="../index.html">Sair</a></li>
+                <li><a href="../index.php">Sair</a></li>
             </ul>
         </nav>
     </div>
