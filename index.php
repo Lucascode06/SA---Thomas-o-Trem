@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <h3>Bem-vindo!</h3>
                 <p>Sessão ativa.</p>
-                <a href="?logout=1">Sair</a>
+                <a href="?logout=1" >Sair</a>
 
             </div>
 
