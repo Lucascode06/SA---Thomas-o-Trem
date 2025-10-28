@@ -6,9 +6,12 @@ create table usuarios (
     nome varchar(255) not null,
     email varchar(255) not null unique,
     senha varchar(20) not null,
-    role enum('admin', 'user') default 'user' not null
-    cep int (8) not null
-);
+    role enum('admin', 'user') default 'user' not null,
+    cep char (8) not null,
+    endereco varchar(255) not null,
+    bairro varchar(100) not null,
+    numero int not null
+    );
 
 create table trens (
     id int auto_increment primary key,
