@@ -3,7 +3,8 @@
 include 'db.php';
 session_start();
 
-include 'logout.php';
+// logout está em script/logout.php
+include __DIR__ . '/script/logout.php';
 
 // 3) Login
 $msg = "";

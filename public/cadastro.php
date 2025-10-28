@@ -20,12 +20,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $cidade = $_POST['cidade'] ?? '';
   $uf = $_POST['uf'] ?? '';
 
-  $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
-  $stmt->bind_param("sss", $nome, $email, $senha);
-  $stmt->execute();
-  $stmt->close();
-
-  $msg = "Funcionário cadastrado com sucesso!";
+  // Inserir também os campos de endereço (assumindo que a tabela `usuarios` foi atualizada)
+  $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha, cep, rua, bairro, cidade, uf) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  if ($stmt) {
+    $stmt->bind_param("ssssssss", $nome, $email, $senha, $cep, $rua, $bairro, $cidade, $uf);
+    $stmt->execute();
+    $stmt->close();
+    $msg = "Funcionário cadastrado com sucesso!";
+  } else {
+    // Em caso de erro (colunas não existem ou outro problema), mostra mensagem e registra o erro
+    $msg = "Erro ao cadastrar funcionário: " . $mysqli->error;
+  }
 }
 
 ?>

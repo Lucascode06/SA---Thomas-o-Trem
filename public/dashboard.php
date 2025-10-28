@@ -1,6 +1,7 @@
 <?php
 session_start();
-include '../logout.php';
+// logout.php está em script/, usar caminho absoluto relativo ao diretório atual
+include __DIR__ . '/../script/logout.php';
 // Verifica se é admin
 $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
 ?>
