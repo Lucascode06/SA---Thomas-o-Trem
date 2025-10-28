@@ -8,16 +8,24 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
 // 3) CADASTRO
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nome = $_POST["nome"] ?? "";
-    $email = $_POST["email"] ?? "";
-    $senha = $_POST["senha"] ?? "";
+  $nome = $_POST["nome"] ?? "";
+  $email = $_POST["email"] ?? "";
+  $senha = $_POST["senha"] ?? "";
 
-    $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $nome, $email, $senha);
-    $stmt->execute();
-    $stmt->close();
+  // Campos de endereço enviados pelo formulário (não estão sendo salvos na tabela `usuarios` por padrão)
+  // Se quiser salvar, adicione colunas na tabela e atualize a query abaixo.
+  $cep = $_POST['cep'] ?? '';
+  $rua = $_POST['rua'] ?? '';
+  $bairro = $_POST['bairro'] ?? '';
+  $cidade = $_POST['cidade'] ?? '';
+  $uf = $_POST['uf'] ?? '';
 
-    $msg = "Funcionário cadastrado com sucesso!";
+  $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
+  $stmt->bind_param("sss", $nome, $email, $senha);
+  $stmt->execute();
+  $stmt->close();
+
+  $msg = "Funcionário cadastrado com sucesso!";
 }
 
 ?>
@@ -70,6 +78,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <form method="post">
           <input type="text" name="nome" placeholder="Nome" required>
           <input type="email" name="email" placeholder="E-mail" required>
+
+          <!-- ViaCEP -->
+          <label for="viacep-cep" style="font-weight:600; margin-top:8px;">CEP:</label>
+          <input type="text" id="viacep-cep" name="cep" maxlength="8" placeholder="Digite apenas números">
+
+          <label for="viacep-rua" style="font-weight:600; margin-top:8px;">Rua:</label>
+          <input type="text" id="viacep-rua" name="rua" readonly>
+
+          <label for="viacep-bairro" style="font-weight:600; margin-top:8px;">Bairro:</label>
+          <input type="text" id="viacep-bairro" name="bairro" readonly>
+
+          <label for="viacep-cidade" style="font-weight:600; margin-top:8px;">Cidade:</label>
+          <input type="text" id="viacep-cidade" name="cidade" readonly>
+
+          <label for="viacep-uf" style="font-weight:600; margin-top:8px;">Estado:</label>
+          <input type="text" id="viacep-uf" name="uf" readonly>
+
           <input type="password" name="senha" placeholder="Senha" required>
           <button type="submit">Cadastrar Funcionário</button>
         </form>
@@ -77,6 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
   </section>
 
+  <script src="../script/script.js"></script>
 </body>
 
 </html>
