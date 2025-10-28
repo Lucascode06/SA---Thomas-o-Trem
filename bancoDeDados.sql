@@ -7,6 +7,7 @@ create table usuarios (
     email varchar(255) not null unique,
     senha varchar(20) not null,
     role enum('admin', 'user') default 'user' not null
+    cep int (8) not null
 );
 
 create table trens (
