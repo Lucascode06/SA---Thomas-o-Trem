@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <div class="card" style="margin: 0 auto;">
         <h3>Cadastro</h3>
         <?php if ($msg): ?><p class="msg"><?php echo $msg; ?></p><?php endif; ?>
-        <form method="post">
+  <form id="viacep-form" method="post">
           <input type="text" name="nome" placeholder="Nome" required>
           <input type="email" name="email" placeholder="E-mail" required>
 
