@@ -1,6 +1,7 @@
 <?php
 session_start();
-include '../logout.php';
+// o arquivo logout.php está na pasta script/
+include __DIR__ . '/../script/logout.php';
 $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
 ?>
 
@@ -35,6 +36,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
           <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
           <li><a href="read.php">Gerenciar Usuários</a></li>
         <?php endif; ?>
+        <li><a href="viacep.php">Endereço</a></li>
         <li><a href="../?logout=1">Sair</a></li>
       </ul>
     </nav>

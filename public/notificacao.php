@@ -21,10 +21,11 @@
                 <li><a href="../public/dashboard.php">Inicio</a></li>
                 <li><a href="rotas.php">Rotas</a></li>
                 <li><a href="notificacao.php">Notificação</a></li>
-                <li><a href="relatorio.php">Relatorio</a></li>
+                <li><a href="relatorio.php">Relatório</a></li>
                 <li><a href="manutencao.php">Manutenção</a></li>
                 <li><a href="suporte.php">Suporte</a></li>
-                <li><a href="../index.php">Sair</a></li>
+                <li><a href="viacep.php">Endereço</a></li>
+                <li><a href="../?logout=1">Sair</a></li>
             </ul>
         </nav>
     </div>

@@ -52,6 +52,7 @@ $row = $result->fetch_assoc();
             <li><a href="relatorio.html">Relatório</a></li>
             <li><a href="manutencao.html">Manutenção</a></li>
             <li><a href="suporte.html">Suporte</a></li>
+            <li><a href="viacep.php">Endereço</a></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
     </nav>

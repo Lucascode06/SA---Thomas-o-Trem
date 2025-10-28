@@ -56,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
           <li><a href="read.php">Gerenciar Usuários</a></li>
         <?php endif; ?>
+        <li><a href="viacep.php">Endereço</a></li>
         <li><a href="../?logout=1">Sair</a></li>
       </ul>
     </nav>

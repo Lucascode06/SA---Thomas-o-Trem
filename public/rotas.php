@@ -22,6 +22,7 @@
                 <li><a href="relatorio.php">Relatorio</a></li>
                 <li><a href="manutencao.php">Manutenção</a></li>
                 <li><a href="suporte.php">Suporte</a></li>
+                <li><a href="viacep.php">Endereço</a></li>
                 <li><a href="../index.php">Sair</a></li>
             </ul>
         </nav>

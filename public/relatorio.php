@@ -19,9 +19,10 @@
       <li><a href="rotas.php">Rotas</a></li>
       <li><a href="notificacao.php">Notificação</a></li>
       <li><a href="relatorio.php">Relatório</a></li>
-      <li><a href="manutencao.php">Manutenção</a></li>
-      <li><a href="suporte.php">Suporte</a></li>
-      <li><a href="../index.php">Sair</a></li>
+  <li><a href="manutencao.php">Manutenção</a></li>
+  <li><a href="suporte.php">Suporte</a></li>
+  <li><a href="viacep.php">Endereço</a></li>
+  <li><a href="../index.php">Sair</a></li>
     </ul>
   </nav>
   </div>
