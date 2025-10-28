@@ -1,15 +1,22 @@
-document.getElementById('viacep-cep').addEventListener('blur', viacepBuscarCEP);
+// Busca o input de CEP — se não existir, não faz nada
+const cepInput = document.getElementById('viacep-cep');
+if (cepInput) {
+  cepInput.addEventListener('blur', viacepBuscarCEP);
+}
 
 function limparCampos() {
-  document.getElementById('viacep-rua').value = '';
-  document.getElementById('viacep-bairro').value = '';
-  document.getElementById('viacep-cidade').value = '';
-  document.getElementById('viacep-uf').value = '';
+  const ids = ['viacep-rua', 'viacep-bairro', 'viacep-cidade', 'viacep-uf'];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
 }
 
 function viacepBuscarCEP() {
-  const cep = document.getElementById('viacep-cep').value.replace(/\D/g, '');
-  const form = document.getElementById('viacep-form');
+  const cep = (document.getElementById('viacep-cep')?.value || '').replace(/\D/g, '');
+  // Tenta achar um form com id viacep-form, senão usa o form pai do input
+  let form = document.getElementById('viacep-form');
+  if (!form && cepInput) form = cepInput.closest('form');
 
   if (cep.length !== 8) {
     alert('CEP inválido! Por favor, digite 8 números.');
@@ -17,8 +24,7 @@ function viacepBuscarCEP() {
     return;
   }
 
-  // Adiciona classe de loading
-  form.classList.add('loading');
+  if (form) form.classList.add('loading');
   limparCampos();
 
   fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -33,16 +39,27 @@ function viacepBuscarCEP() {
         throw new Error('CEP não encontrado. Verifique o número digitado.');
       }
 
-      document.getElementById('viacep-rua').value = data.rua || '';
-      document.getElementById('viacep-bairro').value = data.bairro || '';
-      document.getElementById('viacep-cidade').value = data.localidade || '';
-      document.getElementById('viacep-uf').value = data.uf || '';
+      // usar logradouro (nome correto do campo retornado pela API)
+      const logradouro = data.logradouro || '';
+      const bairro = data.bairro || '';
+      const cidade = data.localidade || '';
+      const uf = data.uf || '';
+
+      const elRua = document.getElementById('viacep-rua');
+      const elBairro = document.getElementById('viacep-bairro');
+      const elCidade = document.getElementById('viacep-cidade');
+      const elUf = document.getElementById('viacep-uf');
+
+      if (elRua) elRua.value = logradouro;
+      if (elBairro) elBairro.value = bairro;
+      if (elCidade) elCidade.value = cidade;
+      if (elUf) elUf.value = uf;
     })
     .catch((error) => {
       alert(error.message || 'Erro ao buscar o CEP. Por favor, tente novamente.');
       limparCampos();
     })
     .finally(() => {
-      form.classList.remove('loading');
+      if (form) form.classList.remove('loading');
     });
 }
