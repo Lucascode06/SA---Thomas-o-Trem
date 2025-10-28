@@ -2332,3 +2332,76 @@ body.login-page {
     margin-bottom: 10px;
   }
 }
+
+
+/* ======= Estilos exclusivos do módulo ViaCEP ======= */
+
+#viacep-container {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+#viacep-titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#viacep-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#viacep-form label {
+  font-weight: bold;
+  color: #444;
+}
+
+#viacep-form input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.2s;
+}
+
+#viacep-form input:focus {
+  border-color: #007bff;
+}
+
+#viacep-form input[readonly] {
+  background-color: #f1f1f1;
+}
+
+/* Loading state */
+#viacep-form.loading {
+  opacity: 0.7;
+  pointer-events: none;
+  position: relative;
+}
+
+#viacep-form.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: 3px solid #007bff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
