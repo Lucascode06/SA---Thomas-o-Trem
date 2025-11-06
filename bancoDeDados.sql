@@ -9,7 +9,7 @@ create table usuarios (
     role enum('admin', 'user') default 'user' not null,
     cep char (8) not null,
     rua varchar(255) not null,
-    bairro varchar(255) not null,\
+    bairro varchar(255) not null,
     cidade varchar(255) not null,
     estado char(2) not null
     );
