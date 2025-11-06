@@ -18,12 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $rua = $_POST['rua'] ?? '';
   $bairro = $_POST['bairro'] ?? '';
   $cidade = $_POST['cidade'] ?? '';
-  $uf = $_POST['uf'] ?? '';
+  $estado = $_POST['estado'] ?? '';
 
   // Inserir também os campos de endereço (assumindo que a tabela `usuarios` foi atualizada)
-  $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha, cep, rua, bairro, cidade, uf) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha, cep, rua, bairro, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
   if ($stmt) {
-    $stmt->bind_param("ssssssss", $nome, $email, $senha, $cep, $rua, $bairro, $cidade, $uf);
+    $stmt->bind_param("ssssssss", $nome, $email, $senha, $cep, $rua, $bairro, $cidade, $estado);
     $stmt->execute();
     $stmt->close();
     $msg = "Funcionário cadastrado com sucesso!";
@@ -97,8 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <label for="viacep-cidade" style="font-weight:600; margin-top:8px;">Cidade:</label>
           <input type="text" id="viacep-cidade" name="cidade" readonly>
 
-          <label for="viacep-uf" style="font-weight:600; margin-top:8px;">Estado:</label>
-          <input type="text" id="viacep-uf" name="uf" readonly>
+          <label for="viacep-estado" style="font-weight:600; margin-top:8px;">Estado:</label>
+          <input type="text" id="viacep-estado" name="estado" readonly>
 
           <input type="password" name="senha" placeholder="Senha" required>
           <button type="submit">Cadastrar Funcionário</button>

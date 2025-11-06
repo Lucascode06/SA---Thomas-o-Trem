@@ -45,3 +45,5 @@ create table alertas (
     foreign key (id_trem) references trens(id)
 );
 
+insert into usuarios (nome, email, senha, role, cep, rua, bairro, cidade, estado) values
+('Admin', 'admin@admin.com', '123', 'admin', '89225170', 'Rua Admin', 'Bairro Admin', 'Cidade Admin', 'SC');
