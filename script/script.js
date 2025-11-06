@@ -35,12 +35,14 @@ function viacepBuscarCEP() {
       return response.json();
     })
     .then(data => {
+      // debug: mostra o objeto retornado no console para ajudar a diagnosticar CEPs que não têm logradouro
+      console.debug('ViaCEP response:', data);
       if (data.erro) {
         throw new Error('CEP não encontrado. Verifique o número digitado.');
       }
 
       // usar logradouro (nome correto do campo retornado pela API)
-      const logradouro = data.logradouro || '';
+  const logradouro = data.logradouro || '';
       const bairro = data.bairro || '';
       const cidade = data.localidade || '';
       const uf = data.uf || '';
@@ -50,7 +52,8 @@ function viacepBuscarCEP() {
       const elCidade = document.getElementById('viacep-cidade');
       const elUf = document.getElementById('viacep-uf');
 
-      if (elRua) elRua.value = logradouro;
+  // se logradouro estiver vazio, tentar usar um fallback razoável (ex.: bairro) para não deixar em branco
+  if (elRua) elRua.value = logradouro || bairro || '';
       if (elBairro) elBairro.value = bairro;
       if (elCidade) elCidade.value = cidade;
       if (elUf) elUf.value = uf;
