@@ -44,3 +44,4 @@ create table alertas (
     descricao text,
     foreign key (id_trem) references trens(id)
 );
+
