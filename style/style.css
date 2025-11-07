@@ -20,7 +20,6 @@ body {
   font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
-  margin: 0;
   min-height: 100vh;
 }
 
@@ -151,8 +150,7 @@ nav ul li a:hover {
   box-shadow: var(--shadow);
   padding: 18px 24px;
   margin-bottom: 24px;
-  width: 100%;
-  max-width: 370px;
+  width: 95%;
   gap: 18px;
 }
 
@@ -165,14 +163,12 @@ nav ul li a:hover {
 }
 
 .box {
-  background: linear-gradient(var(--primary-light) 60%);
-  color: var(--white);
+  background-color: #f7fafc;
   border-radius: 10px;
   box-shadow: var(--shadow);
   padding: 18px 0 10px 0;
   margin-bottom: 24px;
-  width: 100%;
-  max-width: 370px;
+  width: 95%;
   text-align: center;
 }
 
@@ -196,6 +192,16 @@ nav ul li a:hover {
 .box button.red {
   background: var(--danger-color);
   color: var(--white);
+}
+
+.relatorio-box{
+  background-color: #f7fafc;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 18px 0 10px 0;
+  margin-bottom: 24px;
+  width: 95%;
+  text-align: center;
 }
 
 /* === MANUTENÇÃO === */

@@ -87,7 +87,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         <?php endif; ?>
 
-        <a href="public/esqueceuasenha.html">Esqueceu a senha?</a>
     </div>
 </body>
 
