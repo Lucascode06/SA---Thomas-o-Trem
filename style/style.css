@@ -206,15 +206,13 @@ nav ul li a:hover {
 
 /* === MANUTENÇÃO === */
 .manutencao-item {
-  display: flex;
-  align-items: center;
-  background-color: var(--text-color);
-  color: var(--white);
-  margin: 15px;
-  border-radius: var(--border-radius);
-  padding: 15px;
-  gap: 16px;
-  transition: box-shadow var(--transition);
+  background-color: #f7fafc;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 18px 0 10px 0;
+  margin-bottom: 24px;
+  width: 95%;
+  text-align: center;
 }
 
 .botoes {
@@ -325,10 +323,21 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.notificacao-img{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: var(--shadow);
+.dashboard-imagens img,
+.dashboard-icone {
+  width: 100px;
+  height: 60px;
+}
+
+
+.notificacao-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.relatorio-icone {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }

@@ -29,7 +29,7 @@
 
 <div class="relatorio-box">
   <p>RELATÓRIO</p>
-  <img src="../style/assets/relatorio.png" class="relatorio-icon" alt="Ícone Relatório">
+  <img src="../style/assets/relatorio.png" class="relatorio-icone" alt="Ícone Relatório">
 
   <div class="relatorio-card">
     <div class="relatorio-btn">VELOCIDADE MÉDIA</div>
