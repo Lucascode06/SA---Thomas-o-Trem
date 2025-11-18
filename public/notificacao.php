@@ -22,6 +22,10 @@
                 <li><a href="relatorio.php">Relatório</a></li>
                 <li><a href="manutencao.php">Manutenção</a></li>
                 <li><a href="suporte.php">Suporte</a></li>
+                <?php if ($isAdmin): ?>
+          <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
+          <li><a href="read.php">Gerenciar Usuários</a></li>
+        <?php endif; ?>
                 <li><a href="../?logout=1">Sair</a></li>
             </ul>
         </nav>
