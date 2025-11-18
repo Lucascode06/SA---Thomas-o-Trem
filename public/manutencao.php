@@ -9,7 +9,6 @@
     <script src="../script/dash.js"></script>
 </head>
 
-
     <body id="manutencao-page">
         <div class="container">
             <header>

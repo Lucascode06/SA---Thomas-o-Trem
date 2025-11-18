@@ -26,16 +26,14 @@
             </ul>
         </nav>
         <main>
-            <h1> <span class="rotas-title-text">ROTAS</span>
-                <span class="rotas-title-icon"><i class="fas fa-map-marker-alt"></i></span>
-            </h1>
-            <div class="rotas-img-wrapper">
+            <h1>ROTAS</h1>
+            <div class="box">
                 <img src="../style/assets/Rota.png" alt="Rotas dos Trens" class="rotas-img">
-            </div>
-            <div class="rotas-botoes">
-                <button class="rota-btn">Rota 1</button>
-                <button class="rota-btn">Rota 2</button>
-                <button class="rota-btn">Rota 3</button>
+                <div class="rotas-botoes">
+                    <button class="rota-btn">Rota 1</button>
+                    <button class="rota-btn">Rota 2</button>
+                    <button class="rota-btn">Rota 3</button>
+                </div>
             </div>
         </main>
     </div>

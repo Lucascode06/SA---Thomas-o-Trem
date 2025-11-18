@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"] ?? "";
     $senha = $_POST["senha"] ?? "";
 
-    
         // Login pelo banco de dados (outros usuários)
         $stmt = $mysqli->prepare("SELECT id, nome, email, senha, role FROM usuarios WHERE nome=? AND email=? AND senha=?");
         $stmt->bind_param("sss", $nome, $email, $senha);
@@ -21,9 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = $stmt->get_result();
         $dados = $result->fetch_assoc(); 
         $stmt->close();
-    
-
-
 
     if ($dados) {
         $_SESSION["nome"] = $dados["nome"];
@@ -44,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

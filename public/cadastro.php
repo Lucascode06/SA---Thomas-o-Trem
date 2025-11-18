@@ -97,8 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <label for="viacep-cidade" style="font-weight:600; margin-top:8px;">Cidade:</label>
           <input type="text" id="viacep-cidade" name="cidade" readonly>
 
-          <label for="viacep-estado" style="font-weight:600; margin-top:8px;">Estado:</label>
-          <input type="text" id="viacep-estado" name="estado" readonly>
+          <label for="viacep-uf" style="font-weight:600; margin-top:8px;">Estado:</label>
+          <input type="text" id="viacep-uf" name="uf" readonly>
 
           <input type="password" name="senha" placeholder="Senha" required>
           <button type="submit">Cadastrar Funcionário</button>
