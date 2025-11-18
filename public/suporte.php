@@ -25,7 +25,6 @@
             <li><a href="relatorio.php">Relatorio</a></li>
             <li><a href="manutencao.php">Manutenção</a></li>
             <li><a href="suporte.php">Suporte</a></li>
-            <li><a href="viacep.php">Endereço</a></li>
             <li><a href="../index.php">Sair</a></li>
         </ul>
     </nav>
@@ -40,7 +39,7 @@
 
         </div>
 
-        <div class="section">
+        <div class="box">
             <h2>Descreva o problema</h2> 
             <textarea placeholder="Digite sua mensagem" id="problema"></textarea>
             <div class="erro" id="erro"></div> 

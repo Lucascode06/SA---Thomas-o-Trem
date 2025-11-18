@@ -41,7 +41,6 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
           <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
           <li><a href="read.php">Gerenciar Usuários</a></li>
         <?php endif; ?>
-        <li><a href="viacep.php">Endereço</a></li>
         <li><a href="../?logout=1">Sair</a></li>
       </ul>
     </nav>
@@ -82,7 +81,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
     </div>
 
     <!-- Relatórios dos trens -->
-    <div class="relatorio-box">
+    <div class="box">
       <h2>STATUS</h2>
 
       <div class="relatorio-card">

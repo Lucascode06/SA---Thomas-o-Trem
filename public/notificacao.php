@@ -24,32 +24,22 @@
                 <li><a href="relatorio.php">Relatório</a></li>
                 <li><a href="manutencao.php">Manutenção</a></li>
                 <li><a href="suporte.php">Suporte</a></li>
-                <li><a href="viacep.php">Endereço</a></li>
                 <li><a href="../?logout=1">Sair</a></li>
             </ul>
         </nav>
     </div>
 
     <main>
-        <div class="user-info">
-            <img id="perfil" src="../style/assets/Logo.png" alt="">
-            <div class="user-details">
-                <p><strong>Cargo:</strong> xxxxx</p>
-                <p><strong>Nome:</strong> xxxxx</p>
-                <p><strong>Idade:</strong> xx</p>
-                <p><strong>CPF:</strong> xxxxxxxxxxxx</p>
-                <p><strong>Email:</strong> xxxxxxxxxxxxxx.xxx</p>
-            </div>
-        </div>
-        <div class="schedule">
-            <div class="notificacao-item">
+        <h1>NOTIFICAÇÃO</h1>
+        <div>
+            <div class="box">
                 <img class="notificacao-img" src="../style/assets/tempestade.png" alt="">
                 <div class="notificacao-info">
                     <p><strong>Tempestade:</strong></p>
                     <p>Causa: Alerta de fortes chuvas</p>
                 </div>
             </div>
-            <div class="notificacao-item">
+            <div class="box">
                 <img class="notificacao-img" src="../style/assets/Desvio.png" alt="">
                 <div class="notificacao-info">
                     <p><strong>Desvio de rota:</strong></p>

@@ -60,7 +60,7 @@ header {
   top: 60px;
   right: 0;
   background-color: var(--primary-color);
-  width: 200px;
+  width: 150px;
   border-radius: 0 0 10px 10px;
   box-shadow: var(--shadow);
   transition: opacity var(--transition);
@@ -150,8 +150,8 @@ nav ul li a:hover {
   box-shadow: var(--shadow);
   padding: 18px 24px;
   margin-bottom: 24px;
-  width: 95%;
   gap: 18px;
+  word-wrap: break-word;
 }
 
 #perfil {
@@ -163,12 +163,11 @@ nav ul li a:hover {
 }
 
 .box {
-  background-color: #f7fafc;
+  background-color: rgb(132, 162, 194);
   border-radius: 10px;
   box-shadow: var(--shadow);
   padding: 18px 0 10px 0;
-  margin-bottom: 24px;
-  width: 95%;
+  margin-bottom: 12px;
   text-align: center;
 }
 
@@ -194,16 +193,6 @@ nav ul li a:hover {
   color: var(--white);
 }
 
-.relatorio-box{
-  background-color: #f7fafc;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  padding: 18px 0 10px 0;
-  margin-bottom: 24px;
-  width: 95%;
-  text-align: center;
-}
-
 /* === MANUTENÇÃO === */
 .manutencao-item {
   background-color: #f7fafc;
@@ -217,8 +206,7 @@ nav ul li a:hover {
 
 .botoes {
   display: flex;
-  gap: 8px;
-  margin-left: auto;
+  gap: 2px;
 }
 
 .botoes button {
@@ -266,7 +254,6 @@ nav ul li a:hover {
   }
 
   header {
-    flex-direction: column;
     align-items: flex-start;
     padding: 10px;
   }
@@ -276,7 +263,6 @@ nav ul li a:hover {
   }
 
   #menu {
-    width: 100vw;
     top: 50px;
   }
 }
@@ -340,4 +326,25 @@ nav ul li a:hover {
   width: 80px;
   height: 80px;
   object-fit: contain;
+}
+
+.rotas-img{
+  width: 400px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.manutencao-img{
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+#problema{
+  width: 330px;
+  height: 100px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border var(--transition);
 }

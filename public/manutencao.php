@@ -26,33 +26,16 @@
                     <li><a href="relatorio.php">Relatorio</a></li>
                     <li><a href="manutencao.php">Manutenção</a></li>
                     <li><a href="suporte.php">Suporte</a></li>
-                    <li><a href="viacep.php">Endereço</a></li>
                     <li><a href="../index.php">Sair</a></li>
-                    
-
-
-
                 </ul>
             </nav>
         </div>
 
-
-
-
         <main>
-            <div class="user-info">
-                <img id="perfil" src="../style/assets/Logo.png" alt="">
-                <div class="user-details">
-                    <p><strong>Cargo:</strong> xxxxx</p>
-                    <p><strong>Nome:</strong> xxxxx</p>
-                    <p><strong>Idade:</strong> xx</p>
-                    <p><strong>CPF:</strong> xxxxxxxxxxxx</p>
-                    <p><strong>Email:</strong> xxxxxxxxxxxxxx.xxx</p>
-                </div>
-            </div>
-            <div class="schedule">
-                <div class="manutencao-list">
-                    <div class="manutencao-item">
+            <h1>MANUTENÇÃO</h1>
+            <div>
+                <div>
+                    <div class="box">
                         <img class="manutencao-img" src="../style/assets/trilho.png" alt="">
                         <div class="manutencao-info">
                             <p><strong>Inspeção de Rodas e Trilhos</strong></p>
@@ -62,7 +45,7 @@
                             <button><i class="fas fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="manutencao-item">
+                    <div class="box">
                         <img class="manutencao-img" src="../style/assets/motor_1.png" alt="">
                         <div class="manutencao-info">
                             <p><strong>Manutenção do Motor</strong></p>
@@ -72,7 +55,7 @@
                             <button><i class="fas fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="manutencao-item">
+                    <div class="box">
                         <img class="manutencao-img" src="../style/assets/motor-removebg-preview.png" alt="">
                         <div class="manutencao-info">
                             <p><strong>Manutenção do Sistema de Freios</strong></p>
@@ -82,7 +65,7 @@
                             <button><i class="fas fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="manutencao-item">
+                    <div class="box">
                         <img class="manutencao-img" src="../style/assets/vagao.png" alt="">
                         <div class="manutencao-info">
                             <p><strong>Inspeção de Vagões</strong></p>
