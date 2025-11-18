@@ -1,3 +1,7 @@
+<?php 
+session_start();
+$isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
