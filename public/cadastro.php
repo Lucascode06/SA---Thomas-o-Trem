@@ -10,7 +10,9 @@ $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $nome = $_POST["nome"] ?? "";
   $email = $_POST["email"] ?? "";
-  $senha = $_POST["senha"] ?? "";
+  // Recebe a senha em texto plano e gera o hash seguro antes de salvar
+  $senha_plain = $_POST["senha"] ?? "";
+  $senha = password_hash($senha_plain, PASSWORD_DEFAULT);
 
   // Campos de endereço enviados pelo formulário (não estão sendo salvos na tabela `usuarios` por padrão)
   // Se quiser salvar, adicione colunas na tabela e atualize a query abaixo.
@@ -18,7 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $rua = $_POST['rua'] ?? '';
   $bairro = $_POST['bairro'] ?? '';
   $cidade = $_POST['cidade'] ?? '';
-  $estado = $_POST['estado'] ?? '';
+  // O formulário usa name="uf" para o estado; mapeia para a variável usada na query
+  $estado = $_POST['uf'] ?? $_POST['estado'] ?? '';
 
   // Inserir também os campos de endereço (assumindo que a tabela `usuarios` foi atualizada)
   $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha, cep, rua, bairro, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
