@@ -371,3 +371,12 @@ nav ul li a:hover {
   outline: none;
   transition: border var(--transition);
 }
+
+#descricao{
+  width: 330px;
+  height: 100px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border var(--transition);
+}

@@ -42,11 +42,32 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
         <h1>NOTIFICAÇÃO</h1>
         <div>
             <div class="box">
-                <img class="notificacao-img" src="../style/assets/tempestade.png" alt="">
-                <div class="notificacao-info">
-                    <p><strong>Tempestade:</strong></p>
-                    <p>Causa: Alerta de fortes chuvas</p>
-                </div>
+            <div class="tabela">
+            <?php
+            include '../db.php';
+               $sql = "SELECT * FROM notificacoes";
+            $result = $mysqli->query($sql);
+            if ($result->num_rows > 0) {
+                echo "<table class='notificacoes-table' border='0'>
+                    <tr>
+                        <th>Título</th>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                    </tr>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                            <td>{$row['titulo']}</td>
+                            <td>{$row['data_alerta']}</td>
+                            <td>{$row['descricao']}</td>
+                    </tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "<div class='msg'>Nenhum registro encontrado.</div>";
+            }
+            $mysqli->close();
+            ?>
+            </div>
             </div>
             <div class="box">
                 <img class="notificacao-img" src="../style/assets/Desvio.png" alt="">

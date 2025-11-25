@@ -1,6 +1,24 @@
 <?php 
+include '../db.php';
 session_start();
-$isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
+$isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; 
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $titulo = $_POST["titulo-notificacao"] ?? "";
+  $descricao = $_POST["descricao"] ?? "";
+  
+  $stmt = $mysqli->prepare("INSERT INTO notificacoes (titulo, descricao) VALUES (?, ?)");
+  if ($stmt) {
+    $stmt->bind_param("ss", $titulo, $descricao);
+    $stmt->execute();
+    $stmt->close();
+    $msg = "Notificação criada com sucesso!";
+  } else {
+    $msg = "Erro ao criar notificação: " . $mysqli->error;
+  }
+}
+
+?>
 
 <html lang="en">
 
@@ -43,10 +61,12 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
         <div class="box">
             <form id="form-notificacao" method="POST">
                 <h3>Título</h3>
-                <input type="text" id="titulo-notificacao" placeholder="Digite o título" required >
+                <input type="text" id="titulo-notificacao" name="titulo-notificacao" placeholder="Digite o título" required >
+
                 <h3>Descrição</h3>
-                <textarea placeholder="Digite sua mensagem" id="problema"></textarea>
+                <textarea placeholder="Digite sua mensagem" id="descricao" name="descricao" required></textarea>
                 <div class="erro" id="erro"></div>
+
                 <button type="submit">Criar</button>
             </form>
 
