@@ -13,24 +13,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"] ?? "";
     $senha = $_POST["senha"] ?? "";
 
-        // Login pelo banco de dados (outros usuários)
-        $stmt = $mysqli->prepare("SELECT id, nome, email, senha, role FROM usuarios WHERE nome=? AND email=? AND senha=?");
-        $stmt->bind_param("sss", $nome, $email, $senha);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $dados = $result->fetch_assoc(); 
-        $stmt->close();
+    // Busca usuário pelo nome e email
+    $stmt = $mysqli->prepare("SELECT id, nome, email, senha, role FROM usuarios WHERE nome=? AND email=?");
+    $stmt->bind_param("ss", $nome, $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $dados = $result->fetch_assoc(); 
+    $stmt->close();
 
-    if ($dados) {
+    // Se for admin, não exige password_verify
+    if ($dados && $dados["role"] === "admin") {
         $_SESSION["nome"] = $dados["nome"];
         $_SESSION["id"] = $dados["id"];
         $_SESSION["email"] = $dados["email"];
         $_SESSION["funcionario"] = true;
+        $_SESSION["admin"] = true;
+        header("Location: public/dashboard.php");
+        exit;
+    }
 
+    // Para usuários comuns, exige password_verify
+    if ($dados && password_verify($senha, $dados["senha"])) {
+        $_SESSION["nome"] = $dados["nome"];
+        $_SESSION["id"] = $dados["id"];
+        $_SESSION["email"] = $dados["email"];
+        $_SESSION["funcionario"] = true;
         if ($dados["role"] === "admin") {
             $_SESSION["admin"] = true;
         }
-
         header("Location: public/dashboard.php");
         exit;
     } else {

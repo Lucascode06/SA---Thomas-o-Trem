@@ -1,6 +1,15 @@
 <?php 
 session_start();
-$isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
+$isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
+include "../db.php";
+
+// Buscar manutenções pendentes
+$manutencoes = [];
+$res = $mysqli->query("SELECT * FROM ocorrencias WHERE status = 'Pendente' ORDER BY id DESC");
+while ($row = $res->fetch_assoc()) {
+    $manutencoes[] = $row;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -39,53 +48,20 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
         </div>
 
         <main>
-            <h1>MANUTENÇÃO</h1>
-            <div>
-                <div>
-                    <div class="box">
-                        <img class="manutencao-img" src="../style/assets/trilho.png" alt="">
-                        <div class="manutencao-info">
-                            <p><strong>Inspeção de Rodas e Trilhos</strong></p>
-                        </div>
-                        <div class="botoes">
-                            <button><i class="fas fa-check"></i></button>
-                            <button><i class="fas fa-times"></i></button>
-                        </div>
+            <h1>Manutenções Pendentes</h1>
+            <a href="criar_manutencao.php" style="display:inline-block;margin-bottom:1em;">Criar Nova Manutenção</a>
+            <?php if (empty($manutencoes)): ?>
+                <p>Nenhuma manutenção pendente.</p>
+            <?php else: ?>
+                <?php foreach ($manutencoes as $m): ?>
+                    <div class="ocorrencia" style="border:1px solid #ccc; border-radius:8px; margin-bottom:1em; padding:1em; background:#fafafa;">
+                        <strong><?= htmlspecialchars($m['titulo']) ?></strong><br>
+                        <small>Criado em: <?= isset($m['data_criacao']) ? htmlspecialchars($m['data_criacao']) : '' ?></small><br><br>
+                        <p><?= nl2br(htmlspecialchars($m['descricao'])) ?></p>
+                        <p>Status: <strong><?= htmlspecialchars($m['status']) ?></strong></p>
                     </div>
-                    <div class="box">
-                        <img class="manutencao-img" src="../style/assets/motor_1.png" alt="">
-                        <div class="manutencao-info">
-                            <p><strong>Manutenção do Motor</strong></p>
-                        </div>
-                        <div class="botoes">
-                            <button><i class="fas fa-check"></i></button>
-                            <button><i class="fas fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img class="manutencao-img" src="../style/assets/motor-removebg-preview.png" alt="">
-                        <div class="manutencao-info">
-                            <p><strong>Manutenção do Sistema de Freios</strong></p>
-                        </div>
-                        <div class="botoes">
-                            <button><i class="fas fa-check"></i></button>
-                            <button><i class="fas fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img class="manutencao-img" src="../style/assets/vagao.png" alt="">
-                        <div class="manutencao-info">
-                            <p><strong>Inspeção de Vagões</strong></p>
-                        </div>
-                        <div class="botoes">
-                            <button><i class="fas fa-check"></i></button>
-                            <button><i class="fas fa-times"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+                <?php endforeach; ?>
+            <?php endif; ?>
         </main>
     </div>
     <script src="../script/dash.js"></script>
