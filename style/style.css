@@ -172,7 +172,7 @@ nav ul li a:hover {
 }
 
 .box button {
-  width: 90%;
+  width: 330px;
   margin: 8px auto;
   padding: 10px 0;
   border: none;
@@ -361,4 +361,13 @@ nav ul li a:hover {
   border-radius: 6px;
   margin-left: 1px;margin-right: 1px;
   
+}
+
+#titulo-notificacao{
+  width: 330px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border var(--transition);
 }

@@ -100,6 +100,7 @@ $row = $result->fetch_assoc();
             menu.classList.toggle('hidden');
         }
     </script>
+    <script src="../script/script.js"></script>
 </body>
 
 </html>

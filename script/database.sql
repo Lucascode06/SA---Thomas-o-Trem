@@ -5,7 +5,7 @@ create table usuarios (
     id int auto_increment primary key,
     nome varchar(255) not null,
     email varchar(255) not null unique,
-    senha varchar(20) not null,
+    senha varchar(255) not null,
     role enum('admin', 'user') default 'user' not null,
     cep char (8) not null,
     rua varchar(255) not null,
@@ -17,33 +17,34 @@ create table usuarios (
 create table trens (
     id int auto_increment primary key,
     nome varchar(255) not null,
-    modelo varchar(255),
-    status varchar(50)
+    modelo varchar(255) not null,
+    status varchar(255) not null
 );
 
 create table rotas (
     id int auto_increment primary key,
     origem varchar(255) not null,
     destino varchar(255) not null,
-    distancia_km decimal(10, 2)
+    distancia_km decimal(10, 2) not null
 );
 
 create table manutencao (
     id int auto_increment primary key,
     id_trem int not null,
     data_manutencao date not null,
-    descricao text,
+    descricao text not null,
     foreign key (id_trem) references trens(id)
 );
 
-create table alertas (
+create table notificacoes (
     id int auto_increment primary key,
-    id_trem int not null,
-    tipo_alerta varchar(255) not null,
+    titulo varchar(255) not null,
     data_alerta datetime default current_timestamp,
-    descricao text,
-    foreign key (id_trem) references trens(id)
+    descricao text not null
 );
 
 insert into usuarios (nome, email, senha, role, cep, rua, bairro, cidade, estado) values
 ('Admin', 'admin@admin.com', '123', 'admin', '89225170', 'Rua Admin', 'Bairro Admin', 'Cidade Admin', 'SC');
+
+insert into usuarios (nome, email, senha, role, cep, rua, bairro, cidade, estado) values
+('Usuario', 'usuario@usuario.com', '321', 'user', '89225170', 'Rua Usuario', 'Bairro Usuario', 'Cidade Usuario', 'SC');
