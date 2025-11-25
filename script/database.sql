@@ -45,6 +45,3 @@ create table notificacoes (
 
 insert into usuarios (nome, email, senha, role, cep, rua, bairro, cidade, estado) values
 ('Admin', 'admin@admin.com', '123', 'admin', '89225170', 'Rua Admin', 'Bairro Admin', 'Cidade Admin', 'SC');
-
-insert into usuarios (nome, email, senha, role, cep, rua, bairro, cidade, estado) values
-('Usuario', 'usuario@usuario.com', '321', 'user', '89225170', 'Rua Usuario', 'Bairro Usuario', 'Cidade Usuario', 'SC');
