@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Cadastro</title>
   <link rel="stylesheet" href="../style/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
           <li><a href="read.php">Gerenciar Usuários</a></li>
         <?php endif; ?>
-        <li><a href="viacep.php">Endereço</a></li>
         <li><a href="../?logout=1">Sair</a></li>
       </ul>
     </nav>
@@ -81,11 +80,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <section class="cadastro-section" style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
     <div class="login-container" style="display: flex; justify-content: center; align-items: center;">
       <div class="card" style="margin: 0 auto;">
-        <h3>Cadastro</h3>
+        <h1>Cadastro</h1>
         <?php if ($msg): ?><p class="msg"><?php echo $msg; ?></p><?php endif; ?>
   <form id="viacep-form" method="post">
           <input type="text" name="nome" placeholder="Nome" required>
           <input type="email" name="email" placeholder="E-mail" required>
+          <input type="password" name="senha" placeholder="Senha" required>
 
           <!-- ViaCEP -->
           <label for="viacep-cep" style="font-weight:600; margin-top:8px;">CEP:</label>
@@ -103,7 +103,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <label for="viacep-uf" style="font-weight:600; margin-top:8px;">Estado:</label>
           <input type="text" id="viacep-uf" name="uf" readonly>
 
-          <input type="password" name="senha" placeholder="Senha" required>
           <button type="submit">Cadastrar Funcionário</button>
         </form>
       </div>

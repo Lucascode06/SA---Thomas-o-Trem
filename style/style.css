@@ -184,7 +184,7 @@ nav ul li a:hover {
 }
 
 .box button.blue {
-  background: var(--primary-light);
+  background: #54b4e0;
   color: var(--white);
 }
 
@@ -193,7 +193,6 @@ nav ul li a:hover {
   color: var(--white);
 }
 
-/* === MANUTENÇÃO === */
 .manutencao-item {
   background-color: #f7fafc;
   border-radius: 10px;
@@ -352,4 +351,14 @@ nav ul li a:hover {
 #thomas{
   width: 350px;
   height: auto;
+}
+
+.tabela{
+  align-items: center;
+  display: inline-block;
+  border-color: black;
+  border: 2px solid;
+  border-radius: 6px;
+  margin-left: 1px;margin-right: 1px;
+  
 }

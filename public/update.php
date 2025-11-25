@@ -1,6 +1,8 @@
 <?php
 
 include '../db.php';
+session_start();
+$isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
 
 $id = $_GET['id'];
 
@@ -36,6 +38,7 @@ $row = $result->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar Usuário</title>
     <link rel="stylesheet" href="../style/style.css">
+    <script src="../script/script.js"></script>
 </head>
 <body id="update-page">
     <div class="container">
@@ -56,22 +59,40 @@ $row = $result->fetch_assoc();
           <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
           <li><a href="read.php">Gerenciar Usuários</a></li>
         <?php endif; ?>
-            <li><a href="viacep.php">Endereço</a></li>
-            <li><a href="logout.php">Sair</a></li>
+            <li><a href="../?logout=1">Sair</a></li>
         </ul>
     </nav>
     <main>
-        <h1 class="titulo">Atualizar Usuário</h1>
-        <form class="update-form" method="POST" action="update.php?id=<?php echo $row['id'];?>">
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" value="<?php echo $row['nome'];?>" required>
-            <label for="email">Email:</label>
-            <input type="email" name="email" value="<?php echo $row['email'];?>" required>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" value="<?php echo $row['senha'];?>" required>
-            <input class="btn-atualizar" type="submit" value="Atualizar">
-        </form>
-        <a class="btn-voltar" href="read.php">Ver registros</a>
+        <section class="cadastro-section"
+            style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
+            <div class="login-container" style="display: flex; justify-content: center; align-items: center;">
+                <div class="card" style="margin: 0 auto;">
+                    <h1 class="titulo">Atualizar Usuário</h1>
+                    <form id="viacep-form" method="post" action="update.php?id=<?php echo $row['id'];?>">
+                        <input type="text" name="nome" placeholder="Nome" required value="<?php echo $row['nome']; ?>">
+                        <input type="email" name="email" placeholder="E-mail" required value="<?php echo $row['email']; ?>">
+                        <input type="password" name="senha" placeholder="Senha" required value="<?php echo $row['senha']; ?>">
+
+                        <label for="viacep-cep" style="font-weight:600; margin-top:8px;">CEP:</label>
+                        <input type="text" id="viacep-cep" name="cep" maxlength="8" placeholder="Digite apenas números">
+
+                        <label for="viacep-rua" style="font-weight:600; margin-top:8px;">Rua:</label>
+                        <input type="text" id="viacep-rua" name="rua" readonly>
+
+                        <label for="viacep-bairro" style="font-weight:600; margin-top:8px;">Bairro:</label>
+                        <input type="text" id="viacep-bairro" name="bairro" readonly>
+
+                        <label for="viacep-cidade" style="font-weight:600; margin-top:8px;">Cidade:</label>
+                        <input type="text" id="viacep-cidade" name="cidade" readonly>
+
+                        <label for="viacep-uf" style="font-weight:600; margin-top:8px;">Estado:</label>
+                        <input type="text" id="viacep-uf" name="uf" readonly>
+
+                        <button type="submit">Cadastrar Funcionário</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
     <script>
         function toggleMenu() {

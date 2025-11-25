@@ -20,7 +20,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </header>
 
-    </div> <!-- Menu que da acesso às páginas  -->
+    </div>
     <nav id="menu" class="hidden">
         <ul>
             <li><a href="./dashboard.php">Inicio</a></li>
@@ -36,9 +36,12 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
             <li><a href="../index.php">Sair</a></li>
         </ul>
     </nav>
-    <div class="suporte">
-        <p id="motivo">MOTIVO DO CONTATO </p>
+
+    <main>
+        <h1>SUPORTE</h1>
+                
         <div class="options">
+            <p>Motivo do Contato</p>
             <form id="infosuporte"> 
                 <label><input type="radio" name="opcoes" value="bugs"> Bugs</label>
                 <label><input type="radio" name="opcoes" value="pergunta"> Pergunta</label> 
@@ -48,21 +51,15 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
         </div>
 
         <div class="box">
-            <h2>Descreva o problema</h2> 
+            <h3>Descreva o problema</h3> 
             <textarea placeholder="Digite sua mensagem" id="problema"></textarea>
             <div class="erro" id="erro"></div> 
             <button type="submit">Enviar</button> 
             </form>
+            <p>Telefone para contato 📞</p> <p>+55-xx-xxxx-xxxx</p>
 
         </div>
-
-        </main>
-
-        <footer> 
-            <a href="tel:+55xxxxxxxxxx" class="call-footer">📞</a>
-            <p>+55-xx-xxxx-xxxx<br>Telefone para contato</p>
-        </footer>
-    </div>
+    </main>
 </body>
 
 </html>
