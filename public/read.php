@@ -29,12 +29,13 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
           <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
           <li><a href="read.php">Gerenciar Usuários</a></li>
         <?php endif; ?>
-            <li><a href="logout.php">Sair</a></li>
+            <li><a href="../?logout=1">Sair</a></li>
         </ul>
     </nav>
     <main>
-        <h1 class="titulo">Lista de Usuários</h1>
-        <div class="usuarios-table-wrapper">
+        <div class="box">
+        <h1>Lista de Usuários</h1>
+        <div class="tabela">
             <?php
             include '../db.php';
             $sql = "SELECT * FROM usuarios";
@@ -46,6 +47,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
                         <th>Nome</th>
                         <th>Email</th>
                         <th>Senha</th>
+                        <th>Cep</th>
                         <th>Ações</th>
                     </tr>";
                 while ($row = $result->fetch_assoc()) {
@@ -54,6 +56,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
                             <td>{$row['nome']}</td>
                             <td>{$row['email']}</td>
                             <td>{$row['senha']}</td>
+                            <td>{$row['cep']}</td>
                             <td>
                                 <a class='btn-editar' href='update.php?id={$row['id']}'>Editar</a>
                                 <a class='btn-excluir' href='delete.php?id={$row['id']}'>Excluir</a>
@@ -67,7 +70,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
             $mysqli->close();
             ?>
         </div>
-        <a class="btn-novo" href="create.php">Inserir novo Registro</a>
+        </div>
     </main>
     <script>
         function toggleMenu() {
