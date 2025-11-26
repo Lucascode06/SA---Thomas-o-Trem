@@ -9,19 +9,14 @@ if (!$isAdmin) {
 include "../db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $titulo = $_POST["titulo"];
+    $data = $_POST["data"];
     $descricao = $_POST["descricao"];
-    $status = 'Pendente';
 
-    $sql = "INSERT INTO ocorrencias (titulo, descricao, status) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO manutencao (data_manutencao, descricao) VALUES (?, ?)";
     $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param("sss", $titulo, $descricao, $status);
-
-    if ($stmt->execute()) {
-        echo "<script>alert('Ocorrência criada!'); window.location='manutencao.php';</script>";
-    } else {
-        echo "Erro ao criar ocorrência!";
-    }
+    $stmt->bind_param("ss", $data, $descricao);
+    $stmt->execute();
+    $stmt->close();
 }
 ?>
 
@@ -35,8 +30,8 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/suporte.js"></script>
-    <title>Suporte</title>
-</head> <!-- Pagina do suporte ao usuario -->
+    <title>Criar Manutenção</title>
+</head>
 
 <body id="suporte-page">
     <div class="container">
@@ -49,34 +44,41 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
     </div>
     <nav id="menu" class="hidden">
         <ul>
-            <li><a href="./dashboard.php">Inicio</a></li>
-            <li><a href="rotas.php">Rotas</a></li>
-            <li><a href="notificacao.php">Notificação</a></li>
-            <li><a href="relatorio.php">Relatorio</a></li>
-            <li><a href="manutencao.php">Manutenção</a></li>
-            <li><a href="suporte.php">Suporte</a></li>
-            <?php if ($isAdmin): ?>
-          <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
-          <li><a href="read.php">Gerenciar Usuários</a></li>
-        <?php endif; ?>
-            <li><a href="../index.php">Sair</a></li>
+            <li><a href="../public/dashboard.php">Inicio</a></li>
+                <li><a href="rotas.php">Rotas</a></li>
+                <li><a href="notificacao.php">Notificação</a></li>
+                <?php if ($isAdmin): ?>
+                    <li><a href="criar_notificacao.php">Criar Notificação</a></li>
+                <?php endif; ?>
+                <li><a href="relatorio.php">Relatório</a></li>
+                <li><a href="manutencao.php">Manutenção</a></li>
+                <?php if ($isAdmin): ?>
+                    <li><a href="criar_manutencao.php">Criar Manutenção</a></li>
+                <?php endif; ?>
+                <li><a href="suporte.php">Suporte</a></li>
+                <?php if ($isAdmin): ?>
+                    <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
+                    <li><a href="read.php">Gerenciar Usuários</a></li>
+                <?php endif; ?>
+                <li><a href="../?logout=1">Sair</a></li>
         </ul>
     </nav>
 <div class="container">
     <h2>Criar Nova Ocorrência</h2>
 
-    <form method="POST">
-        <label>Título:</label><br>
-        <input type="text" name="titulo" required><br><br>
+    <div class="box">
+            <form id="form-notificacao" method="POST">
+                <h3>Data</h3>
+                <input type="date" id="data" name="data" required>
 
-        <label>Descrição:</label><br>
-        <textarea name="descricao" required></textarea><br><br>
+                <h3>Descrição</h3>
+                <textarea placeholder="Digite sua mensagem" id="descricao" name="descricao" required></textarea>
+                <div class="erro" id="erro"></div>
 
-        <button type="submit">Criar</button>
-    </form>
+                <button type="submit">Criar</button>
+            </form>
 
-    <br>
-    <a href="manutencao.php">Voltar</a>
+        </div>
 </div>
 </body>
 </html>

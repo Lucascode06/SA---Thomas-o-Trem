@@ -41,17 +41,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
     <nav id="menu" class="hidden">
         <ul>
-            <li><a href="./dashboard.php">Inicio</a></li>
-            <li><a href="rotas.php">Rotas</a></li>
-            <li><a href="notificacao.php">Notificação</a></li>
-            <li><a href="relatorio.php">Relatorio</a></li>
-            <li><a href="manutencao.php">Manutenção</a></li>
-            <li><a href="suporte.php">Suporte</a></li>
-            <?php if ($isAdmin): ?>
-          <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
-          <li><a href="read.php">Gerenciar Usuários</a></li>
-        <?php endif; ?>
-            <li><a href="../?logout=1">Sair</a></li>
+            <li><a href="../public/dashboard.php">Inicio</a></li>
+                <li><a href="rotas.php">Rotas</a></li>
+                <li><a href="notificacao.php">Notificação</a></li>
+                <?php if ($isAdmin): ?>
+                    <li><a href="criar_notificacao.php">Criar Notificação</a></li>
+                <?php endif; ?>
+                <li><a href="relatorio.php">Relatório</a></li>
+                <li><a href="manutencao.php">Manutenção</a></li>
+                <?php if ($isAdmin): ?>
+                    <li><a href="criar_manutencao.php">Criar Manutenção</a></li>
+                <?php endif; ?>
+                <li><a href="suporte.php">Suporte</a></li>
+                <?php if ($isAdmin): ?>
+                    <li><a href="cadastro.php">Cadastrar Funcionário</a></li>
+                    <li><a href="read.php">Gerenciar Usuários</a></li>
+                <?php endif; ?>
+                <li><a href="../?logout=1">Sair</a></li>
         </ul>
     </nav>
 

@@ -30,7 +30,7 @@ create table rotas (
 
 create table manutencao (
     id int auto_increment primary key,
-    id_trem int not null,
+    id_trem int,
     data_manutencao date not null,
     descricao text not null,
     foreign key (id_trem) references trens(id)
