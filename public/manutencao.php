@@ -53,13 +53,13 @@ while ($row = $res->fetch_assoc()) {
         </div>
 
         <main>
-            <h1>Manutenções Pendentes</h1>
+            <h1>MANUTENÇÕES</h1>
             <?php if (empty($manutencoes)): ?>
                 <p>Nenhuma manutenção pendente.</p>
             <?php else: ?>
                 <?php foreach ($manutencoes as $m): ?>
                     <div class="ocorrencia" style="border:1px solid #ccc; border-radius:8px; margin-bottom:1em; padding:1em; background:#fafafa;">
-                        <strong><?= htmlspecialchars($m['id_trem']) ?></strong><br>
+                        <strong>Identificação do Trem: <?= htmlspecialchars($m['id_trem']) ?></strong><br>
                         <small>Criado em: <?= isset($m['data_manutencao']) ? htmlspecialchars($m['data_manutencao']) : '' ?></small><br><br>
                         <p><?= nl2br(htmlspecialchars($m['descricao'])) ?></p>
                     </div>

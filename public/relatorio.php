@@ -20,7 +20,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
     <main>
-      <h1>RELATÓRIO</h1>
+      <h1>RELATÓRIOS</h1>
       <nav id="menu" class="hidden">
         <ul>
           <li><a href="../public/dashboard.php">Inicio</a></li>

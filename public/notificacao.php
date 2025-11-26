@@ -51,7 +51,7 @@ while ($row = $res->fetch_assoc()) {
     </div>
 
     <main>
-        <h1>NOTIFICAÇÃO</h1>
+        <h1>NOTIFICAÇÕES</h1>
             <?php if (empty($notificacoes)): ?>
                 <p>Nenhuma notificação.</p>
             <?php else: ?>
