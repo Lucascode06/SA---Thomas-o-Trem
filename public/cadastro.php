@@ -10,7 +10,8 @@ $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $nome = $_POST["nome"] ?? "";
   $email = $_POST["email"] ?? "";
-  // Recebe a senha em texto plano e gera o hash seguro antes de salvar
+  $foto_perfil = $_POST["foto_perfil"] ?? "";
+  
   $senha_plain = $_POST["senha"] ?? "";
   $senha = password_hash($senha_plain, PASSWORD_DEFAULT);
 
@@ -24,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $estado = $_POST['uf'] ?? $_POST['estado'] ?? '';
 
   // Inserir também os campos de endereço (assumindo que a tabela `usuarios` foi atualizada)
-  $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha, cep, rua, bairro, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  $stmt = $mysqli->prepare("INSERT INTO usuarios (nome, email, senha, cep, rua, bairro, cidade, estado, foto_perfil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
   if ($stmt) {
-    $stmt->bind_param("ssssssss", $nome, $email, $senha, $cep, $rua, $bairro, $cidade, $estado);
+    $stmt->bind_param("sssssssss", $nome, $email, $senha, $cep, $rua, $bairro, $cidade, $estado, $foto_perfil);
     $stmt->execute();
     $stmt->close();
     $msg = "Funcionário cadastrado com sucesso!";
@@ -108,6 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           <label for="viacep-uf" style="font-weight:600; margin-top:8px;">Estado:</label>
           <input type="text" id="viacep-uf" name="uf" readonly>
+
+          <label for="foto_perfil" style="font-weight:600; margin-top:8px;">Foto de Perfil:</label>
+          <input type="file" name="foto_perfil" accept="image/png, image/jpeg, image/jpg" required><br>
 
           <button type="submit">Cadastrar Funcionário</button>
         </form>

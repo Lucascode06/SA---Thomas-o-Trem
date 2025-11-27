@@ -11,7 +11,8 @@ create table usuarios (
     rua varchar(255) not null,
     bairro varchar(255) not null,
     cidade varchar(255) not null,
-    estado char(2) not null
+    estado char(2) not null,
+    foto_perfil varchar(255) not null
     );
 
 create table trens (
