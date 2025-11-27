@@ -1,9 +1,29 @@
 <?php
 session_start();
+include '../db.php';
 // logout.php está em script/, usar caminho absoluto relativo ao diretório atual
 include __DIR__ . '/../script/logout.php';
 
 $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
+
+// Busca imagem do usuário logado
+$imagemPerfil = '../style/assets/Logo.png'; // padrão
+if (isset($_SESSION['id'])) {
+    $idUser = $_SESSION['id'];
+    $resImg = $mysqli->query("SELECT foto_perfil FROM usuarios WHERE id = $idUser");
+    if ($resImg && $imgRow = $resImg->fetch_assoc()) {
+        $foto = trim($imgRow['foto_perfil']);
+        if (!empty($foto)) {
+            // Se for URL absoluta ou caminho absoluto
+            if (preg_match('/^(https?:\/\/|\/)/', $foto)) {
+                $imagemPerfil = $foto;
+            } else {
+                // Garante que não haja barras duplas
+                $imagemPerfil = '../style/assets/' . ltrim($foto, '/');
+            }
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +78,10 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
     
     <!-- Informações do usuário -->
     <div class="user-info">
-      <img id="perfil" src="../style/assets/Logo.png" alt="Foto de perfil">
+      <img id="perfil" src="<?= htmlspecialchars($imagemPerfil) ?>" alt="Foto de perfil" style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+      <?php if (!file_exists(str_replace('../', '', $imagemPerfil)) && !preg_match('/^https?:\/\//', $imagemPerfil)): ?>
+        <div style="color:red;">Imagem não encontrada: <?= htmlspecialchars($imagemPerfil) ?></div>
+      <?php endif; ?>
       <div class="user-details">
 
         <?php
