@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-
+    // Salva a senha em texto puro (atenção: não recomendado para produção)
     $sql = "UPDATE usuarios SET nome ='$nome',email ='$email', senha='$senha' WHERE id=$id";
 
     if ($mysqli->query($sql) === true) {
@@ -80,19 +80,19 @@ $row = $result->fetch_assoc();
                         <input type="password" name="senha" placeholder="Senha" required value="<?php echo $row['senha']; ?>">
 
                         <label for="viacep-cep" style="font-weight:600; margin-top:8px;">CEP:</label>
-                        <input type="text" id="viacep-cep" name="cep" maxlength="8" placeholder="Digite apenas números">
+                        <input type="text" id="viacep-cep" name="cep" maxlength="8" placeholder="Digite apenas números" value="<?php echo $row['cep']; ?>">
 
                         <label for="viacep-rua" style="font-weight:600; margin-top:8px;">Rua:</label>
-                        <input type="text" id="viacep-rua" name="rua" readonly>
+                        <input type="text" id="viacep-rua" name="rua" value="<?php echo $row['rua']; ?>">
 
                         <label for="viacep-bairro" style="font-weight:600; margin-top:8px;">Bairro:</label>
-                        <input type="text" id="viacep-bairro" name="bairro" readonly>
+                        <input type="text" id="viacep-bairro" name="bairro" value="<?php echo $row['bairro']; ?>">
 
                         <label for="viacep-cidade" style="font-weight:600; margin-top:8px;">Cidade:</label>
-                        <input type="text" id="viacep-cidade" name="cidade" readonly>
+                        <input type="text" id="viacep-cidade" name="cidade" value="<?php echo $row['cidade']; ?>">
 
                         <label for="viacep-uf" style="font-weight:600; margin-top:8px;">Estado:</label>
-                        <input type="text" id="viacep-uf" name="uf" readonly>
+                        <input type="text" id="viacep-uf" name="uf" value="<?php echo $row['estado']; ?>">
 
                         <button type="submit">Cadastrar Funcionário</button>
                     </form>
@@ -107,6 +107,7 @@ $row = $result->fetch_assoc();
         }
     </script>
     <script src="../script/script.js"></script>
+    <script src="../script/dash.js"></script>
 </body>
 
 </html>
