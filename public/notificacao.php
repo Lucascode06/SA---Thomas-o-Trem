@@ -5,9 +5,15 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true;
 include "../db.php";
 
 $notificacoes = [];
+$errorMsg = '';
 $res = $mysqli->query("SELECT * FROM notificacoes");
-while ($row = $res->fetch_assoc()) {
-    $notificacoes[] = $row;
+if ($res === false) {
+    // Guarda mensagem de erro para exibir e evitar fatal error
+    $errorMsg = $mysqli->error;
+} else {
+    while ($row = $res->fetch_assoc()) {
+        $notificacoes[] = $row;
+    }
 }
 ?>
 
@@ -52,7 +58,9 @@ while ($row = $res->fetch_assoc()) {
 
     <main>
         <h1>NOTIFICAÇÕES</h1>
-            <?php if (empty($notificacoes)): ?>
+            <?php if ($errorMsg): ?>
+                <p style="color:red;">Erro ao buscar notificações: <?= htmlspecialchars($errorMsg) ?></p>
+            <?php elseif (empty($notificacoes)): ?>
                 <p>Nenhuma notificação.</p>
             <?php else: ?>
                 <?php foreach ($notificacoes as $n): ?>

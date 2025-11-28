@@ -79,7 +79,18 @@ if (isset($_SESSION['id'])) {
     <!-- Informações do usuário -->
     <div class="user-info">
       <img id="perfil" src="<?= htmlspecialchars($imagemPerfil) ?>" alt="Foto de perfil" style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
-      <?php if (!file_exists(str_replace('../', '', $imagemPerfil)) && !preg_match('/^https?:\/\//', $imagemPerfil)): ?>
+      <?php
+        // Verifica existência do arquivo no sistema de arquivos quando não for URL externa
+        $notFound = false;
+        if (!preg_match('/^https?:\/\//', $imagemPerfil)) {
+            // monta caminho absoluto para checagem
+            $fsPath = realpath(__DIR__ . '/' . $imagemPerfil);
+            if ($fsPath === false || !file_exists($fsPath)) {
+                $notFound = true;
+            }
+        }
+      ?>
+      <?php if ($notFound): ?>
         <div style="color:red;">Imagem não encontrada: <?= htmlspecialchars($imagemPerfil) ?></div>
       <?php endif; ?>
       <div class="user-details">

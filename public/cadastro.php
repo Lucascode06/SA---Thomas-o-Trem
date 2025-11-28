@@ -10,7 +10,30 @@ $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $nome = $_POST["nome"] ?? "";
   $email = $_POST["email"] ?? "";
-  $foto_perfil = $_POST["foto_perfil"] ?? "";
+  // tratar upload de arquivo (foto_perfil)
+  $foto_perfil = "";
+  if (isset($_FILES['foto_perfil']) && $_FILES['foto_perfil']['error'] === UPLOAD_ERR_OK) {
+    $uploadDir = __DIR__ . '/../style/assets/';
+    if (!is_dir($uploadDir)) {
+      mkdir($uploadDir, 0755, true);
+    }
+    $tmp = $_FILES['foto_perfil']['tmp_name'];
+    $origName = basename($_FILES['foto_perfil']['name']);
+    $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
+    $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+    if (in_array($ext, $allowed, true)) {
+      $newName = time() . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
+      $dest = $uploadDir . $newName;
+      if (move_uploaded_file($tmp, $dest)) {
+        // armazena apenas o nome do arquivo no banco
+        $foto_perfil = $newName;
+      } else {
+        $msg = "Erro ao salvar a imagem de perfil.";
+      }
+    } else {
+      $msg = "Formato de imagem não permitido. Use jpg, jpeg, png ou gif.";
+    }
+  }
   
   $senha_plain = $_POST["senha"] ?? "";
   $senha = password_hash($senha_plain, PASSWORD_DEFAULT);
@@ -89,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <div class="card" style="margin: 0 auto;">
         <h1>Cadastro</h1>
         <?php if ($msg): ?><p class="msg"><?php echo $msg; ?></p><?php endif; ?>
-  <form id="viacep-form" method="post">
+  <form id="viacep-form" method="post" enctype="multipart/form-data">
           <input type="text" name="nome" placeholder="Nome" required>
           <input type="email" name="email" placeholder="E-mail" required>
           <input type="password" name="senha" placeholder="Senha" required>

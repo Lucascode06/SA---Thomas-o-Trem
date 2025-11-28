@@ -62,7 +62,7 @@ $isAdmin = isset($_SESSION["admin"]) && $_SESSION["admin"] === true; ?>
             <div class="erro" id="erro"></div> 
             <button type="submit">Enviar</button> 
             </form>
-            <p>Telefone para contato 📞</p> <p>+55-xx-xxxx-xxxx</p>
+            <p>Telefone para contato 📞</p> <p>+55-47-99957-0338</p>
 
         </div>
     </main>
